@@ -8,8 +8,8 @@ function About() {
 
   const education=[
     {hold:"BCA",university:"TMG College of Arts and Science - University of Madras",date:"June 2022 - June 2025"},
-    {hold:"HSC",university:"GHSS-Pazhampettai",date:"June 2020 - June 2022"},
-    {hold:"SSLC",university:"GHSS-Pazhampettai",date:"June 2019 - June 2020"},
+    {hold:"HSC | 67.1",university:"GHSS-Pazhampettai",date:"June 2020 - June 2022"},
+    {hold:"SSLC | 73.2",university:"GHSS-Pazhampettai",date:"June 2019 - June 2020"},
   ]
   const boxRef =useRef(null);
   const [inView,setInView]= useState(false);
