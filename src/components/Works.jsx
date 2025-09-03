@@ -93,7 +93,7 @@ useEffect(()=>{
 },[])
   return (
 <section ref={boxRef} className="flex my-15 overflow-hidden flex-col w-full items-center justify-center">
-<h2 className="text-center mb-5 text-[#A5BBCB] text-4xl font-extrabold ">My Works</h2>
+<h2 className="text-center mb-5 text-[#A5BBCB] text-4xl font-extrabold inter">My Works</h2>
 <div  className={`max-w-7xl md:max-w-5xl rounded-xl  mt-3  w-[80%] md:w-[70%] mx-auto space-y-6 transition-all duration-1000 ease-in-out ${inView? "translate-x-0 opacity-100": "translate-x-30 opacity-0"}`}>
   {projects.map((project, index) => (
         <div style={{boxShadow:"1px 1px 30px rgba(255,255,255,.1)"}}  key={index} className=" overflow-hidden mb-5 w-[full] rounded-lg ">

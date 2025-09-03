@@ -17,7 +17,7 @@ return(
 		 <div>
 		
            		<ul className="flex items-center gap-3 inter">
-           			<h2 className="text-gray-300 font-bold">Quick Links :</h2>
+           			
 			<Link
               to="hero"
               smooth={true}

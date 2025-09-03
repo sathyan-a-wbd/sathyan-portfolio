@@ -66,13 +66,13 @@ function Contact() {
 
   return (
     <section className="w-full my-3 flex flex-col lg:flex-col md:flex-row items-center justify-center">
-    <h1 className="text-center mb-8 text-[#A5BBCB] text-4xl font-bold">
+    <h1 className="text-center work-sans mb-8 text-[#A5BBCB] text-4xl font-bold inter">
        Contact Me
       </h1>
       <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[80%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
         <div className="w-full flex flex-col gap-8">
           <form onSubmit={handleSubmit} className="form flex flex-col gap-7 px-10">
-            <h2 className="text-gray-100 text-5xl ">
+            <h2 className="text-gray-100 text-lg md:text-5xl">
               Get In Touch <br />
               <span className="text-[18px] font-poppins">
                 Feel free to contact me!

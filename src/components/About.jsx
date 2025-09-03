@@ -31,7 +31,7 @@ useEffect(()=>{
   return (
     <div className="flex  flex-col w-full items-center justify-center overflow-hidden ">
       <div className="w-3/4">
-        <div ref={boxRef} className="flex items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold">
+        <div ref={boxRef} className="flex inter items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold">
           about
           <div
             className="mt-3"

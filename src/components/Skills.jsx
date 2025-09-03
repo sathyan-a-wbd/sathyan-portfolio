@@ -103,7 +103,7 @@ function Skills() {
 
   return (
     <section className="flex my-15  flex-col w-full items-center justify-center">
-      <h1 className="text-center mb-5 text-[#A5BBCB] text-4xl font-extrabold">
+      <h1 className="text-center mb-5 text-[#A5BBCB] inter text-4xl font-extrabold">
         What I Do
       </h1>
       <div
@@ -119,9 +119,9 @@ function Skills() {
                   alt="skills"
                   className="w-[30px] md:w-[40px]"
                 />
-                <span className="text-gray-400 font-medium ">{skill.name}</span>
+                <span className="text-gray-400 font-medium work-sans">{skill.name}</span>
               </div>
-              <span className="text-gray-400">{skill.level}</span>
+              <span className="text-gray-400 work-sans">{skill.level}</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
@@ -143,7 +143,7 @@ function Skills() {
    ref={sectionRef1}
           className=" flex flex-col  md:flex-row text-sm gap-5  md:items-center"
         >
-          <h4 className="text-gray-300 text-left font-extrabold text-wider">
+          <h4 className="text-gray-300 work-sans text-left font-extrabold text-wider">
             Tools :
           </h4>
           <div className="flex gap-10">
@@ -156,7 +156,7 @@ function Skills() {
                 }`}
               >
                 <img width={tool.w} height={tool.h} src={tool.icon} alt="Git" />
-                <span className="text-gray-400 text-xs  md:text-sm font-medium">
+                <span className="text-gray-400 text-xs work-sans md:text-sm font-medium">
                   {tool.name}
                 </span>
               </div>

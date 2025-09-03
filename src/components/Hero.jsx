@@ -3,6 +3,8 @@ import { Link } from "react-scroll";
 import { IoCloudDownload } from "react-icons/io5";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import {ReactTyped} from "react-typed";
+import profile from  "../assets/ProjectScrennshots/sathyan.png";
+
 
 // #211F20
 //text //#A5BBCB
@@ -52,14 +54,6 @@ function Hero() {
             Front-End <br />
             Developer
           </h1>
-           <ReactTyped strings ={['" Passionate about web Development,with a curious <br/> mindset and  strong focus on continuous learning "']}
-        typeSpeed={10}
-        backSpeed={40}
-        showCursor={false}
-        philosophy
-       className=" text-gray-300 mt-2 mb-2 poppins-medium-italic"
-        />
-         
           <div className="flex items-center gap-2 mt-3">
             <button
               onMouseEnter={() => setIsHover(true)}
@@ -85,7 +79,7 @@ function Hero() {
       {/* Right */}
       <div className="flex-1  flex items-center md:justify-center">
         <img
-          src="/sathyan.png"
+          src={profile}
           alt="sathyan.png"
           className={`bg-[#9CAFBF] w-[300px] md:w-[350px] p-0 rounded-2xl transition-all transition-transform duration-300 hover:scale-105 duration-1000 ease-out transform ${
             animate ? "opacity-100 translate-y-2" : "opacity-0 -translate-y-0"
