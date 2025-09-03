@@ -130,13 +130,13 @@ function Contact() {
               className="flex gap-3 font-semibold text-sm md:text-md text-[#008cffff] font-poppins items-center"
               href="mailto:sathyana3011@gmail.com?subject=Job Application&body=Hello, I would like to apply for the job..."
             >
-              <div className={`border-2 border-[#008cffff] rounded-full p-3 bg-blue-500 shadow-inner`}>
+              <div className={`border-2 border-[#008cffff] rounded-full p-3 bg-[#008cffff] shadow-inner`}>
                 <IoIosMail className="text-[20px] text-[#fff]" />
               </div>
               sathyana3011@gmail.com
             </a>
             <div className="flex gap-3 font-semibold text-sm md:text-md  text-[#008cffff] font-poppins items-center">
-              <div className={`border-2 border-[#008cffff] bg-blue-500 rounded-full p-3`}>
+              <div className={`border-2 border-[#008cffff] bg-[#008cffff] rounded-full p-3`}>
                 <FaLocationDot className="text-[20px] text-[#fff]" />
               </div>
               Chennai
