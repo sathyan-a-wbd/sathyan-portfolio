@@ -52,7 +52,7 @@ const projects = [
     image: [PortfolioHero,PortfolioSkills,PortfolioContact],
     tech: ["React", "TailwindCSS"],
     demo: "https://yourdemo.com",
-    github: "https://github.com/yourrepo/portfolio"
+    github: "https://github.com/sathyan-a-wbd/sathyan-portfolio"
   },
     {
     title: "✅ Todo App",
