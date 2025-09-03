@@ -114,7 +114,7 @@ function Skills() {
       </h1>
       <div
         ref={sectionRef}
-        className="max-w-7xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-10 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
+        className="max-w-7xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
       >
         {skills.map((skill, index) => (
           <div key={index}>
