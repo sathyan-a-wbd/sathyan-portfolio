@@ -31,7 +31,7 @@ function Hero() {
   }, []);
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/SathyanAResume.pdf";
+    link.href = "/Sathyan.pdf";
     link.download = "Sathyan-Frontend-Developer.pdf";
     link.click();
   };

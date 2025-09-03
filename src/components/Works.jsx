@@ -51,7 +51,7 @@ const projects = [
     description: "I developed my personal portfolio website using ReactJS and TailwindCSS, focusing on a minimal and professional design. The site showcases my projects, skills, and contact details while using subtle animations to enhance user experience. It is fully responsive, ensuring smooth performance across different devices.",
     image: [PortfolioHero,PortfolioSkills,PortfolioContact],
     tech: ["React", "TailwindCSS"],
-    demo: "https://yourdemo.com",
+    demo: "https://sathyandevportfolio.netlify.app/",
     github: "https://github.com/sathyan-a-wbd/sathyan-portfolio"
   },
     {
