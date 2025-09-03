@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { IoCloudDownload } from "react-icons/io5";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import {ReactTyped} from "react-typed";
-import profilPic from "./assets/sathyan.png.png"
+import profilPic from "/sathyan.png";
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
