@@ -4,7 +4,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import {MdAlternateEmail} from "react-icons/md";
 import {MdCopyright} from "react-icons/md";
-function Footer(){
+const Footer=()=>{
 	
 return(
 

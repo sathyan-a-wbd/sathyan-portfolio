@@ -30,7 +30,7 @@ useEffect(()=>{
 },[])
   return (
     <div className="flex  flex-col w-full items-center justify-center overflow-hidden ">
-      <div className="w-3/4">
+      <div className="w-[80%]">
         <div ref={boxRef} className="flex inter items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold">
           about
           <div
@@ -49,7 +49,7 @@ useEffect(()=>{
           make it beautiful.
         </p>
       </div>
-      <section ref={boxRef} className="education w-3/4">
+      <section ref={boxRef} className="education w-[80%]">
       <h2 className="text-2xl font-extrabold text-gray-400 mt-5 mb-5"> Education :</h2>
       <div className={`flex flex-col gap-5 md:flex-row w-[100%] justify-between items-center transition-all duration-1000 ease-in-out ${inView? "translate-x-0 opacity-100": "translate-x-30 opacity-0"}`}>
       {education.map((stats,i)=>(

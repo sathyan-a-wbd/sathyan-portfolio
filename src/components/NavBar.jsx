@@ -25,7 +25,7 @@ function NavBar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-1 justify-between w-38 cursor-pointer">
             <img  width="50" height="50" src="https://img.icons8.com/clouds/100/under-computer.png" alt="under-computer"/>
-            <h3 className="text-xl work-sans tracking-wider font-bold text-gray-200 md:text-2xl">Sathyan.dev</h3>
+            <h3 className="text-lg work-sans tracking-wider font-bold text-gray-200 md:text-2xl">Sathyan.dev</h3>
           </div>
           <ul className="hidden justify-between items-center w-100 text-gray-100 md:flex">
             <Link

@@ -72,7 +72,7 @@ function Contact() {
       <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[80%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
         <div className="w-full flex flex-col gap-8">
           <form onSubmit={handleSubmit} className="form flex flex-col gap-7 px-10">
-            <h2 className="text-gray-100 text-lg md:text-5xl">
+            <h2 className="text-gray-100 text-3xl md:text-5xl">
               Get In Touch <br />
               <span className="text-[18px] font-poppins">
                 Feel free to contact me!
@@ -127,20 +127,20 @@ function Contact() {
           </div>
           <div className="grid gap-3">
             <a
-              className="flex gap-3 font-semibold text-md text-[#008cffff] font-poppins items-center"
+              className="flex gap-3 font-semibold text-sm md:text-md text-[#008cffff] font-poppins items-center"
               href="mailto:sathyana3011@gmail.com?subject=Job Application&body=Hello, I would like to apply for the job..."
             >
-              <div className={`border-2 border-[#008cffff] rounded-full p-3 shadow-inner`}>
-                <IoIosMail className="text-[20px] text-[#008cffff]" />
+              <div className={`border-2 border-[#008cffff] rounded-full p-3 bg-blue-500 shadow-inner`}>
+                <IoIosMail className="text-[20px] text-[#fff]" />
               </div>
               sathyana3011@gmail.com
             </a>
-            <p className="flex gap-3 font-semibold text-md text-[#008cffff] font-poppins items-center">
-              <div className={`border-2 border-[#008cffff] rounded-full p-3`}>
-                <FaLocationDot className="text-[20px] text-[#008cffff]" />
+            <div className="flex gap-3 font-semibold text-sm md:text-md  text-[#008cffff] font-poppins items-center">
+              <div className={`border-2 border-[#008cffff] bg-blue-500 rounded-full p-3`}>
+                <FaLocationDot className="text-[20px] text-[#fff]" />
               </div>
               Chennai
-            </p>
+            </div>
           </div>
           <div className="flex-1 flex justify-end rounded-tl-lg rounded-br-lg w-full">
             <div className="flex px-3 py-3 items-center gap-3 rounded-tl-3xl rounded-br-lg bg-[#008cffff] text-gray-100">
