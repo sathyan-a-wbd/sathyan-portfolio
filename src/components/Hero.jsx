@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { IoCloudDownload } from "react-icons/io5";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import {ReactTyped} from "react-typed";
-import profilPic from "/sathyan.png";
+
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
@@ -85,7 +85,7 @@ function Hero() {
       {/* Right */}
       <div className="flex-1  flex items-center md:justify-center">
         <img
-          src={profilPic}
+          src="/sathyan.png"
           alt="sathyan.png"
           className={`bg-[#9CAFBF] w-[300px] md:w-[350px] p-0 rounded-2xl transition-all transition-transform duration-300 hover:scale-105 duration-1000 ease-out transform ${
             animate ? "opacity-100 translate-y-2" : "opacity-0 -translate-y-0"
