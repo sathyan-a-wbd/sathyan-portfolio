@@ -62,6 +62,12 @@ function Skills() {
       img: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png",
     },
     {
+      name: "Tailwind CSS",
+      level: 30,
+      color: "bg-sky-400",
+      img: "https://img.icons8.com/color/48/tailwindcss.png",
+    },
+    {
       name: "Sass",
       level: 60,
       color: "bg-[#EB608F]",

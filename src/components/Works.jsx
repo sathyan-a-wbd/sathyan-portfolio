@@ -84,7 +84,7 @@ useEffect(()=>{
       observer.unobserve(entry.target);
     }
   },
-  {threshold : 0.2}
+  {threshold : 0}
   );
   if(boxRef.current) observer.observe(boxRef.current);
   return ()=>{
