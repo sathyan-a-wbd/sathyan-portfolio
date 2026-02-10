@@ -5,6 +5,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 //Image Imports
 // import TodoImage from "https://img.icons8.com/scribby/50/todo-list.png";
@@ -26,8 +27,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 function Works() {
-  const [spread, setSpread] = useState(false);
-
   const projects = [
     {
       title: "📝 Notes App",
@@ -80,6 +79,8 @@ function Works() {
   };
   const boxRef = useRef(null);
   const [inView, setInView] = useState(false);
+  const [showall, setShowall] = useState(false);
+  const visibleProjects = showall ? projects : projects.slice(0, 3);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -107,7 +108,7 @@ function Works() {
       <div
         className={`max-w-7xl md:max-w-5xl rounded-xl  mt-3  w-[80%] md:w-[70%] mx-auto space-y-6 transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
       >
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <div
             style={{ boxShadow: "1px 1px 30px rgba(255,255,255,.1)" }}
             key={index}
@@ -166,6 +167,24 @@ function Works() {
             </div>
           </div>
         ))}
+        {projects.length > 3 && (
+          <div className="w-full mb-3 flex items-center justify-center">
+            <button
+              onClick={() => setShowall(!showall)}
+              className="flex gap-2 items-center outline:none border:none justify-center px-6 py-2 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600 transition"
+            >
+              {!showall ? (
+                <>
+                  Show More <FaAngleDoubleDown />
+                </>
+              ) : (
+                <>
+                  Show Less <FaAngleDoubleDown className="rotate-180" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -49,19 +49,31 @@ function Skills() {
     },
     {
       name: "JavaScript",
-      level: 80,
+      level: 90,
       color: "bg-yellow-400",
       img: "https://img.icons8.com/color/50/javascript.png",
     },
     {
       name: "React",
-      level: 55,
+      level: 80,
       color: "bg-cyan-500",
       img: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png",
     },
     {
+      name: "Redux Toolkit",
+      level: 60,
+      color: "bg-[#764ABC]",
+      img: "https://img.icons8.com/color/48/redux.png",
+    },
+    {
+      name: "Rest API",
+      level: 60,
+      color: "bg-[#CDB4DB]",
+      img: "https://img.icons8.com/officel/80/api-settings.png",
+    },
+    {
       name: "Tailwind CSS",
-      level: 30,
+      level: 70,
       color: "bg-sky-400",
       img: "https://img.icons8.com/color/48/tailwindcss.png",
     },
@@ -75,13 +87,31 @@ function Skills() {
       name: "MySQL",
       level: 50,
       color: "bg-[#F57F17]",
-      img: "https://img.icons8.com/fluency/50/mysql-logo.png",
+      img: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-mysql-an-open-source-relational-database-management-system-logo-shadow-tal-revivo.png",
+    },
+    {
+      name: "Node.js",
+      level: 50,
+      color: "bg-[#339933]",
+      img: "https://img.icons8.com/fluency/48/node-js.png",
+    },
+    {
+      name: "Express.js",
+      level: 53,
+      color: "bg-gray-700",
+      img: "https://img.icons8.com/officel/80/express-js.png",
+    },
+    {
+      name: "MongoDB",
+      level: 48,
+      color: "bg-[#47A248]",
+      img: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-mongodb-a-cross-platform-document-oriented-database-program-logo-shadow-tal-revivo.png",
     },
     {
       name: "PHP",
-      level: 20,
+      level: 50,
       color: "bg-[#878EB7]",
-      img: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-hypertext-preprocessor-a-widely-used-open-source-general-purpose-scripting-language-logo-shadow-tal-revivo.png",
+      img: "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-hypertext-preprocessor-a-widely-used-open-source-general-purpose-scripting-language-logo-shadow-tal-revivo.png",
     },
   ];
   const tools = [
@@ -89,19 +119,19 @@ function Skills() {
       name: "Git",
       h: 40,
       w: 40,
-      icon: "https://img.icons8.com/color/50/git.png",
+      img: "https://img.icons8.com/color/50/git.png",
     },
     {
       name: "GitHub",
       h: 40,
       w: 40,
-      icon: "https://img.icons8.com/fluency/50/github.png",
+      img: "https://img.icons8.com/fluency/50/github.png",
     },
     {
       name: "Vs Code",
       h: 35,
       w: 35,
-      icon: "https://img.icons8.com/color/50/visual-studio-code-2019.png",
+      img: "https://img.icons8.com/color/50/visual-studio-code-2019.png",
     },
   ];
 
@@ -110,6 +140,21 @@ function Skills() {
       <h1 className="text-center mb-5 text-[#A5BBCB] inter text-4xl font-extrabold">
         What I Do
       </h1>
+      <div
+        className=" shadow-[1px_5px_40px_#FFFFFF21,inset_6px_0_18px_rgba(0,0,0,0.25),
+          inset_-6px_0_18px_rgba(0,0,0,0.25)]  px-7 mb-6 md:px-20 rounded-lg py-10 w-[80%] md:w-[70%] mx-auto overflow-hidden"
+      >
+        <div className="flex w-max animate-marquee gap-10">
+          {[...skills, ...skills, ...tools, ...tools].map((skill, i) => (
+            <img
+              key={i}
+              src={skill.img}
+              alt={skill.name}
+              className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-transform duration-300"
+            />
+          ))}
+        </div>
+      </div>
       <div
         ref={sectionRef}
         className="max-w-9xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
@@ -162,7 +207,7 @@ function Skills() {
                     : "translate-x-[-50%] opacity-0"
                 }`}
               >
-                <img width={tool.w} height={tool.h} src={tool.icon} alt="Git" />
+                <img width={tool.w} height={tool.h} src={tool.img} alt="Git" />
                 <span className="text-gray-400 text-xs work-sans md:text-sm font-medium">
                   {tool.name}
                 </span>
