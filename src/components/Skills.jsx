@@ -14,12 +14,11 @@ function Skills() {
           observer.disconnect(); // Trigger only once
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-    
   }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,12 +28,11 @@ function Skills() {
           observer.disconnect(); // Trigger only once
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef1.current) observer.observe(sectionRef1.current);
     return () => observer.disconnect();
-    
   }, []);
   const skills = [
     {
@@ -108,13 +106,13 @@ function Skills() {
   ];
 
   return (
-    <section className="flex my-15  flex-col w-full items-center justify-center">
+    <section className="flex my-15 flex-col w-full items-center justify-center">
       <h1 className="text-center mb-5 text-[#A5BBCB] inter text-4xl font-extrabold">
         What I Do
       </h1>
       <div
         ref={sectionRef}
-        className="max-w-7xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
+        className="max-w-9xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
       >
         {skills.map((skill, index) => (
           <div key={index}>
@@ -125,7 +123,9 @@ function Skills() {
                   alt="skills"
                   className="w-[30px] md:w-[40px]"
                 />
-                <span className="text-gray-400 font-medium work-sans">{skill.name}</span>
+                <span className="text-gray-400 font-medium work-sans">
+                  {skill.name}
+                </span>
               </div>
               <span className="text-gray-400 work-sans">{skill.level}</span>
             </div>
@@ -146,7 +146,7 @@ function Skills() {
         className="max-w-5xl flex items-center gap-10 px-10  rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6"
       >
         <div
-   ref={sectionRef1}
+          ref={sectionRef1}
           className=" flex flex-col  md:flex-row text-sm gap-5  md:items-center"
         >
           <h4 className="text-gray-300 work-sans text-left font-extrabold text-wider">
@@ -158,7 +158,8 @@ function Skills() {
                 key={index}
                 className={`flex flex-col sm:flex-row p-0 rounded-2xl sm:flex-col   gap-2 items-center transition-all duration-1000 ease-out transform ${
                   toolAnimate
-                    ? "translate-x-0 opacity-100": "translate-x-[-50%] opacity-0"
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[-50%] opacity-0"
                 }`}
               >
                 <img width={tool.w} height={tool.h} src={tool.icon} alt="Git" />
