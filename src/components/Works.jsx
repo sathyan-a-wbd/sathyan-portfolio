@@ -21,9 +21,9 @@ import TodoHave from "../assets/ProjectScrennshots/todo-have.png";
 import PortfolioHero from "../assets/ProjectScrennshots/PortfolioHero.png";
 import PortfolioContact from "../assets/ProjectScrennshots/PortfolioSkills.png";
 import PortfolioSkills from "../assets/ProjectScrennshots/PortfolioContact.png";
-import Food from "../assets/ProjectScrennshots/Food.png";
-import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodRecipeCatagory.png";
-import SeparateFood from "../assets/ProjectScrennshots/SeparateFood.png";
+// import Food from "../assets/ProjectScrennshots/Food.png";
+// import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodRecipeCatagory.png";
+// import SeparateFood from "../assets/ProjectScrennshots/SeparateFood.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -31,15 +31,15 @@ import Slider from "react-slick";
 
 function Works() {
   const projects = [
-    {
-      title: "🍔 Food Recipe Finder",
-      description:
-        "Built a dynamic Food Recipe Finder application using Next.js that allows users to search and filter recipes by category through an interactive navbar dropdown. Integrated YouTube video support for visual cooking guidance alongside detailed step-by-step text instructions. Designed a responsive and user-friendly interface to enhance user experience across devices.",
-      image: [Food, FoodRecipeCatagory, SeparateFood],
-      tech: ["Nextjs", "TheMealDB"],
-      demo: "https://recipe-pies.netlify.app/",
-      github: "https://github.com/sathyan-a-wbd/Recipe-Finder/",
-    },
+    // {
+    //   title: "🍔 Food Recipe Finder",
+    //   description:
+    //     "Built a dynamic Food Recipe Finder application using Next.js that allows users to search and filter recipes by category through an interactive navbar dropdown. Integrated YouTube video support for visual cooking guidance alongside detailed step-by-step text instructions. Designed a responsive and user-friendly interface to enhance user experience across devices.",
+    //   image: [Food, FoodRecipeCatagory, SeparateFood],
+    //   tech: ["Nextjs", "TheMealDB"],
+    //   demo: "https://recipe-pies.netlify.app/",
+    //   github: "https://github.com/sathyan-a-wbd/Recipe-Finder/",
+    // },
     {
       title: "📝 Notes App",
       description:
