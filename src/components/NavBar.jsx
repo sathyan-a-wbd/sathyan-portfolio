@@ -31,7 +31,7 @@ function NavBar({ setDownloadMsg }) {
               src="https://img.icons8.com/clouds/100/under-computer.png"
               alt="under-computer"
             />
-            <h3 className="text-3xl work-sans tracking-wider font-bold text-gray-200 md:text-2xl">
+            <h3 className="text-xl work-sans tracking-wider font-bold text-gray-200 md:text-2xl">
               Sathyan.dev
             </h3>
           </div>
