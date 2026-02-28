@@ -2,15 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { IoCloudDownload } from "react-icons/io5";
 import { IoCloudDownloadOutline } from "react-icons/io5";
-import {ReactTyped} from "react-typed";
-import profile from  "../assets/ProjectScrennshots/sathyan.png";
-
+import { ReactTyped } from "react-typed";
+import profile from "../assets/ProjectScrennshots/sathyan.png";
 
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
 
-function Hero() {
+function Hero({ setDownloadMsg }) {
   let [ishover, setIsHover] = useState(false);
   const sectionRef = useRef(null);
   const [animate, setAnimate] = useState(false);
@@ -23,13 +22,14 @@ function Hero() {
           observer.disconnect(); // Trigger only once
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
   const handleDownload = () => {
+    setDownloadMsg(true);
     const link = document.createElement("a");
     link.href = "/Sathyan.pdf";
     link.download = "Sathyan-Frontend-Developer.pdf";
@@ -86,7 +86,7 @@ function Hero() {
           }`}
         />
       </div>
-      <hr/>
+      <hr />
     </section>
   );
 }

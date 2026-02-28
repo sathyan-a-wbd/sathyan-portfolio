@@ -142,7 +142,7 @@ function Skills() {
       </h1>
       <div
         className=" shadow-[1px_5px_40px_#FFFFFF21,inset_6px_0_18px_rgba(0,0,0,0.25),
-          inset_-6px_0_18px_rgba(0,0,0,0.25)]  px-7 mb-6 md:px-20 rounded-lg py-10 w-[80%] md:w-[70%] mx-auto overflow-hidden"
+          inset_-6px_0_18px_rgba(0,0,0,0.25)]  px-7 mb-6 md:px-20 rounded-lg py-10 w-[90%] md:w-[70%] mx-auto overflow-hidden"
       >
         <div className="flex w-max animate-marquee gap-10">
           {[...skills, ...skills, ...tools, ...tools].map((skill, i) => (
@@ -157,7 +157,7 @@ function Skills() {
       </div>
       <div
         ref={sectionRef}
-        className="max-w-9xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6 "
+        className="max-w-9xl md:max-w-5xl shadow-[1px_5px_40px_#FFFFFF21] px-7 md:px-20 hover:shadow-[1px_5px_40px_#A5BBCB40] rounded-lg py-10 w-[90%] md:w-[70%] mx-auto space-y-6 "
       >
         {skills.map((skill, index) => (
           <div key={index}>
@@ -188,7 +188,7 @@ function Skills() {
       <br />
       <div
         style={{ boxShadow: "1px 5px 40px rgba(255, 255, 255, 0.13)" }}
-        className="max-w-5xl flex items-center gap-10 px-10  rounded-lg py-10 w-[80%] md:w-[70%] mx-auto space-y-6"
+        className="max-w-5xl flex items-center gap-10 px-10  rounded-lg py-10 w-[90%] md:w-[70%] mx-auto space-y-6"
       >
         <div
           ref={sectionRef1}

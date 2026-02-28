@@ -6,11 +6,12 @@ import { FaUserTie, FaCode, FaLaptopCode } from "react-icons/fa";
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
-function NavBar() {
+function NavBar({ setDownloadMsg }) {
   let [ishover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDownload = () => {
+    setDownloadMsg(true);
     const link = document.createElement("a");
     link.href = "/Sathyan.pdf";
     link.download = "Sathyan-Frontend-Developer.pdf";
@@ -24,8 +25,15 @@ function NavBar() {
       <div className="max-w7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-1 justify-between w-38 cursor-pointer">
-            <img  width="50" height="50" src="https://img.icons8.com/clouds/100/under-computer.png" alt="under-computer"/>
-            <h3 className="text-lg work-sans tracking-wider font-bold text-gray-200 md:text-2xl">Sathyan.dev</h3>
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/clouds/100/under-computer.png"
+              alt="under-computer"
+            />
+            <h3 className="text-3xl work-sans tracking-wider font-bold text-gray-200 md:text-2xl">
+              Sathyan.dev
+            </h3>
           </div>
           <ul className="hidden justify-between items-center w-100 text-gray-100 md:flex">
             <Link
@@ -88,7 +96,7 @@ function NavBar() {
               )}
             </button>
             <button
-              className="md:hidden focus:outline-none cursor-pointer text-[#A5BBCB]"
+              className="md:hidden focus:outline-none cursor-pointer text-[#A5BBCB] hover:text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
               {/* Hamburger Icon */}

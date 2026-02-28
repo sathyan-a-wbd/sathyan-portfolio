@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
-import {FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -65,13 +65,16 @@ function Contact() {
   };
 
   return (
-    <section className="w-full my-3 flex flex-col lg:flex-col md:flex-row items-center justify-center">
-    <h1 className="text-center work-sans mb-8 text-[#A5BBCB] text-4xl font-bold inter">
-       Contact Me
+    <section className="w-full my-3 flex flex-col lg:flex-col md:flex-col sm:flex-col items-center justify-center">
+      <h1 className="text-center work-sans mb-8 text-[#A5BBCB] text-4xl font-bold inter">
+        Contact Me
       </h1>
-      <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[80%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
+      <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[90%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
         <div className="w-full flex flex-col gap-8">
-          <form onSubmit={handleSubmit} className="form flex flex-col gap-7 px-10">
+          <form
+            onSubmit={handleSubmit}
+            className="form flex flex-col gap-7 px-10"
+          >
             <h2 className="text-gray-100 text-3xl md:text-5xl">
               Get In Touch <br />
               <span className="text-[18px] font-poppins">
@@ -88,7 +91,9 @@ function Contact() {
                 onChange={(e) => setName(e.target.value)}
                 className={`p-2 rounded-md border ${errors.name ? "border-red-500" : "border-gray-400"}`}
               />
-              {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
+              {errors.name && (
+                <span className="text-red-500 text-sm">{errors.name}</span>
+              )}
 
               {/* Email */}
               <input
@@ -98,7 +103,9 @@ function Contact() {
                 onChange={(e) => setEmail(e.target.value)}
                 className={`p-2 rounded-md border ${errors.email ? "border-red-500" : "border-gray-400"}`}
               />
-              {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+              {errors.email && (
+                <span className="text-red-500 text-sm">{errors.email}</span>
+              )}
 
               {/* Message */}
               <textarea
@@ -107,7 +114,9 @@ function Contact() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
-              {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
+              {errors.message && (
+                <span className="text-red-500 text-sm">{errors.message}</span>
+              )}
 
               {/* Submit */}
               <button
@@ -123,20 +132,28 @@ function Contact() {
         {/* Right Side */}
         <div className="w-full flex items-center flex-col h-full justify-between space-y-11">
           <div>
-            <img src={ContactImage} alt="contact" className="hidden lg:flex md:flex sm:flex" />
+            <img
+              src={ContactImage}
+              alt="contact"
+              className="hidden lg:flex md:flex sm:flex"
+            />
           </div>
           <div className="grid gap-3">
             <a
               className="flex gap-3 font-semibold text-sm md:text-md text-[#008cffff] font-poppins items-center"
               href="mailto:sathyana3011@gmail.com?subject=Job Application&body=Hello, I would like to apply for the job..."
             >
-              <div className={`border-2 border-[#008cffff] rounded-full p-3 bg-[#008cffff] shadow-inner`}>
+              <div
+                className={`border-2 border-[#008cffff] rounded-full p-3 bg-[#008cffff] shadow-inner`}
+              >
                 <IoIosMail className="text-[20px] text-[#fff]" />
               </div>
               sathyana3011@gmail.com
             </a>
             <div className="flex gap-3 font-semibold text-sm md:text-md  text-[#008cffff] font-poppins items-center">
-              <div className={`border-2 border-[#008cffff] bg-[#008cffff] rounded-full p-3`}>
+              <div
+                className={`border-2 border-[#008cffff] bg-[#008cffff] rounded-full p-3`}
+              >
                 <FaLocationDot className="text-[20px] text-[#fff]" />
               </div>
               Chennai
@@ -149,7 +166,11 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedinIn role="button" size={30} className="cursor-pointer" />
+                <FaLinkedinIn
+                  role="button"
+                  size={30}
+                  className="cursor-pointer"
+                />
               </a>
               <a
                 href="https://github.com/sathyan-a-wbd/"

@@ -21,6 +21,9 @@ import TodoHave from "../assets/ProjectScrennshots/todo-have.png";
 import PortfolioHero from "../assets/ProjectScrennshots/PortfolioHero.png";
 import PortfolioContact from "../assets/ProjectScrennshots/PortfolioSkills.png";
 import PortfolioSkills from "../assets/ProjectScrennshots/PortfolioContact.png";
+import FoodRecipe from "../assets/ProjectScrennshots/FoodRecipe.png";
+import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodRecipeCatagory.png";
+import SeparateFood from "../assets/ProjectScrennshots/SeparateFood.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,6 +32,15 @@ import Slider from "react-slick";
 function Works() {
   const projects = [
     {
+      title: "🍔 Food Recipe Finder",
+      description:
+        "Built a dynamic Food Recipe Finder application using Next.js that allows users to search and filter recipes by category through an interactive navbar dropdown. Integrated YouTube video support for visual cooking guidance alongside detailed step-by-step text instructions. Designed a responsive and user-friendly interface to enhance user experience across devices.",
+      image: [FoodRecipe, FoodRecipeCatagory, SeparateFood],
+      tech: ["Nextjs", "TheMealDB"],
+      demo: "https://recipe-pies.netlify.app/",
+      github: "https://github.com/sathyan-a-wbd/Recipe-Finder/",
+    },
+    {
       title: "📝 Notes App",
       description:
         "This notes application was built with ReactJS to help users manage their personal notes easily. Notes can be added with custom background colors and labels, searched quickly, and deleted when no longer needed. I implemented localStorage to ensure the notes are saved even after refreshing, and designed a simple, user-friendly interface.",
@@ -36,6 +48,15 @@ function Works() {
       tech: ["React", "LocalStorage"],
       demo: "https://takeshortnoty.netlify.app/",
       github: "https://github.com/sathyan-a-wbd/Notes-App",
+    },
+    {
+      title: "💻 Portfolio Website",
+      description:
+        "I developed my personal portfolio website using ReactJS and TailwindCSS, focusing on a minimal and professional design. The site showcases my projects, skills, and contact details while using subtle animations to enhance user experience. It is fully responsive, ensuring smooth performance across different devices.",
+      image: [PortfolioHero, PortfolioSkills, PortfolioContact],
+      tech: ["React", "TailwindCSS"],
+      demo: "https://sathyandevportfolio.netlify.app/",
+      github: "https://github.com/sathyan-a-wbd/sathyan-portfolio",
     },
     {
       title: "🌦 Weather App",
@@ -47,15 +68,7 @@ function Works() {
       github: "https://github.com/sathyan-a-wbd/Weather-App",
       size: "w-[300px]",
     },
-    {
-      title: "💻 Portfolio Website",
-      description:
-        "I developed my personal portfolio website using ReactJS and TailwindCSS, focusing on a minimal and professional design. The site showcases my projects, skills, and contact details while using subtle animations to enhance user experience. It is fully responsive, ensuring smooth performance across different devices.",
-      image: [PortfolioHero, PortfolioSkills, PortfolioContact],
-      tech: ["React", "TailwindCSS"],
-      demo: "https://sathyandevportfolio.netlify.app/",
-      github: "https://github.com/sathyan-a-wbd/sathyan-portfolio",
-    },
+
     {
       title: "✅ Todo App",
       description:
@@ -106,7 +119,7 @@ function Works() {
         My Works
       </h2>
       <div
-        className={`max-w-7xl md:max-w-5xl rounded-xl  mt-3  w-[80%] md:w-[70%] mx-auto space-y-6 transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
+        className={`max-w-7xl md:max-w-5xl rounded-xl  mt-3  w-[90%] md:w-[70%] mx-auto space-y-6 transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
       >
         {visibleProjects.map((project, index) => (
           <div
