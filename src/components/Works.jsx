@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaAngleDoubleDown } from "react-icons/fa";
 
 //Image Imports
-// import TodoImage from "https://img.icons8.com/scribby/50/todo-list.png";
+
 import Weather from "../assets/ProjectScrennshots/weather.png";
 import WeatherCold from "../assets/ProjectScrennshots/weather-cold.png";
 import WeatherNewyork from "../assets/ProjectScrennshots/newyork.png";
@@ -21,7 +21,7 @@ import TodoHave from "../assets/ProjectScrennshots/todo-have.png";
 import PortfolioHero from "../assets/ProjectScrennshots/PortfolioHero.png";
 import PortfolioContact from "../assets/ProjectScrennshots/PortfolioSkills.png";
 import PortfolioSkills from "../assets/ProjectScrennshots/PortfolioContact.png";
-import FoodRecipe from "../assets/ProjectScrennshots/FoodRecipe.png";
+import Food from "../assets/ProjectScrennshots/Food.png";
 import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodRecipeCatagory.png";
 import SeparateFood from "../assets/ProjectScrennshots/SeparateFood.png";
 
@@ -35,7 +35,7 @@ function Works() {
       title: "🍔 Food Recipe Finder",
       description:
         "Built a dynamic Food Recipe Finder application using Next.js that allows users to search and filter recipes by category through an interactive navbar dropdown. Integrated YouTube video support for visual cooking guidance alongside detailed step-by-step text instructions. Designed a responsive and user-friendly interface to enhance user experience across devices.",
-      image: [FoodRecipe, FoodRecipeCatagory, SeparateFood],
+      image: [Food, FoodRecipeCatagory, SeparateFood],
       tech: ["Nextjs", "TheMealDB"],
       demo: "https://recipe-pies.netlify.app/",
       github: "https://github.com/sathyan-a-wbd/Recipe-Finder/",
