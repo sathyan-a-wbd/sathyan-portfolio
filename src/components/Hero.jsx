@@ -66,16 +66,16 @@ function Hero({ setDownloadMsg }) {
           </h1>
           <div className="flex items-center gap-2 mt-3">
             <button
-              className="font-bold inter hover:bg-gray-400 relative duration-200  cursor-pointer text-gray-700 flex items-center justify-between text-xs md:text-[13px] rounded-sm bg-[#A5BBCB] pl-3 pr-8 py-1"
+              className={`${isAnimate ? "shadow-[0_0_20px_20px_amber-100]" : ""} font-bold inter hover:bg-gray-400 relative duration-200  cursor-pointer text-gray-700 flex items-center justify-between text-xs md:text-[13px] rounded-sm bg-[#A5BBCB] pl-3 pr-8 py-1`}
               onClick={handleDownload}
             >
-              <div className="relative   flex items-center justify-center">
+              <div className="relative flex items-center justify-center">
                 Resume
                 <FaFilePdf
-                  className={` ${isAnimate ? "animate-fileDrop z-1 " : ""}  absolute right-[-25px] `}
+                  className={` ${isAnimate ? "animate-fileDrop z-1 text-white" : ""}  absolute right-[-25px] `}
                 />
                 <FaFolderOpen
-                  className={` ${isAnimate ? "visible scale-130 z-20" : "hidden"} duration-75 ease-in-out absolute right-[-25px] `}
+                  className={` ${isAnimate ? "visible scale-130 z-20 text-white" : "hidden"} duration-75 ease-in-out absolute right-[-25px] `}
                 />
               </div>
             </button>
