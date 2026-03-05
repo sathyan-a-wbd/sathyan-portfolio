@@ -21,9 +21,9 @@ import TodoHave from "../assets/ProjectScrennshots/todo-have.png";
 import PortfolioHero from "../assets/ProjectScrennshots/PortfolioHero.png";
 import PortfolioContact from "../assets/ProjectScrennshots/PortfolioSkills.png";
 import PortfolioSkills from "../assets/ProjectScrennshots/PortfolioContact.png";
-import Food from "../assets/ProjectScrennshots/Food.png";
-import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodRecipeCatagory.png";
-import SeparateFood from "../assets/ProjectScrennshots/SeparateFood.png";
+import Food from "../assets/ProjectScrennshots/Food.JPG";
+import FoodRecipeCatagory from "../assets/ProjectScrennshots/FoodCategory.JPG";
+import SeparateFood from "../assets/ProjectScrennshots/Separate.JPG";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,7 +36,7 @@ function Works() {
       description:
         "Built a dynamic Food Recipe Finder application using Next.js that allows users to search and filter recipes by category through an interactive navbar dropdown. Integrated YouTube video support for visual cooking guidance alongside detailed step-by-step text instructions. Designed a responsive and user-friendly interface to enhance user experience across devices.",
       image: [Food, FoodRecipeCatagory, SeparateFood],
-      tech: ["Nextjs", "TheMealDB"],
+      tech: ["Nextjs", "TheMealDBAPI"],
       demo: "https://recipe-pies.netlify.app/",
       github: "https://github.com/sathyan-a-wbd/Recipe-Finder/",
     },
@@ -139,6 +139,7 @@ function Works() {
                     alt={`${project.title} screenshot ${i + 1}`}
                     className={`d-block mx-auto ${project.size || "w-full"}`}
                     style={{ objectFit: "cover" }}
+                    loading="lazy"
                   />
                 </div>
               ))}
