@@ -1,16 +1,21 @@
 import { Button, TextareaAutosize, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ContactImage from "../assets/Contact.png";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
-function Contact() {
+function Contact({ contactFocus }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const inputRef = useRef(null);
+
+  if (contactFocus) {
+    inputRef.current.focus();
+  }
 
   // ✅ Validation Schema
   const validate = () => {
@@ -88,6 +93,7 @@ function Contact() {
                 placeholder="Enter Your Name"
                 type="text"
                 value={name}
+                ref={inputRef}
                 onChange={(e) => setName(e.target.value)}
                 className={`p-2 rounded-md border ${errors.name ? "border-red-500" : "border-gray-400"}`}
               />

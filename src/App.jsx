@@ -11,13 +11,17 @@ import Footer from "./components/Footer";
 
 function App() {
   const [downloadMsg, setDownloadMsg] = useState(false);
+  const [contactFocus, setContactFocus] = useState(false);
 
   setTimeout(() => {
     setDownloadMsg(false);
   }, 10000);
   return (
     <>
-      <NavBar setDownloadMsg={setDownloadMsg} />
+      <NavBar
+        setDownloadMsg={setDownloadMsg}
+        setContactFocus={setContactFocus}
+      />
 
       <Element name="hero">
         <Hero setDownloadMsg={setDownloadMsg} />?
@@ -60,7 +64,7 @@ function App() {
         <Works />
       </Element>
       <Element name="contact">
-        <Contact />
+        <Contact contactFocus={contactFocus} />
       </Element>
       <Footer />
     </>

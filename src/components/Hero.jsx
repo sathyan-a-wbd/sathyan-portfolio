@@ -4,15 +4,20 @@ import { IoCloudDownload } from "react-icons/io5";
 import { IoCloudDownloadOutline } from "react-icons/io5";
 import { ReactTyped } from "react-typed";
 import profile from "../assets/ProjectScrennshots/sathyan.png";
+import { FaFile } from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
+import { FaFolderOpen } from "react-icons/fa";
+import { FaFilePdf, FaRegFilePdf, FaRegFolderOpen } from "react-icons/fa6";
+import { AiFillFolderAdd } from "react-icons/ai";
 
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
 
 function Hero({ setDownloadMsg }) {
-  let [ishover, setIsHover] = useState(false);
   const sectionRef = useRef(null);
   const [animate, setAnimate] = useState(false);
+  const [isAnimate, setIsAnimate] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,15 +35,20 @@ function Hero({ setDownloadMsg }) {
   }, []);
   const handleDownload = () => {
     setDownloadMsg(true);
-    const link = document.createElement("a");
-    link.href = "/Sathyan.pdf";
-    link.download = "Sathyan-Frontend-Developer.pdf";
-    link.click();
+    setIsAnimate(true);
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = "/Sathyan.pdf";
+      link.download = "Sathyan-Frontend-Developer.pdf";
+      link.click();
+      setIsAnimate(false);
+    }, 2000);
   };
+
   return (
     <section
       ref={sectionRef}
-      className="max-w-6xl my-18 mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:items-start gap-6"
+      className="max-w-10xl my-18 mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:items-start gap-6"
     >
       {/* left */}
       <div className="flex-1 py-24 flex items-center  justify-center text-center md:text-left">
@@ -56,17 +66,18 @@ function Hero({ setDownloadMsg }) {
           </h1>
           <div className="flex items-center gap-2 mt-3">
             <button
-              onMouseEnter={() => setIsHover(true)}
-              onMouseLeave={() => setIsHover(false)}
-              className="font-bold inter hover:bg-gray-400  duration-200  cursor-pointer text-gray-700 flex items-center justify-between text-xs md:text-[13px] rounded-sm bg-[#A5BBCB] px-2 py-1"
+              className="font-bold inter hover:bg-gray-400 relative duration-200  cursor-pointer text-gray-700 flex items-center justify-between text-xs md:text-[13px] rounded-sm bg-[#A5BBCB] pl-3 pr-8 py-1"
               onClick={handleDownload}
             >
-              Resume
-              {ishover ? (
-                <IoCloudDownload className="ml-2 text-[#211F20] duration-200" />
-              ) : (
-                <IoCloudDownloadOutline className="ml-2 text-[#211F20]  duration-200" />
-              )}
+              <div className="relative   flex items-center justify-center">
+                Resume
+                <FaFilePdf
+                  className={` ${isAnimate ? "animate-fileDrop z-1 " : ""}  absolute right-[-25px] `}
+                />
+                <FaFolderOpen
+                  className={` ${isAnimate ? "visible scale-130 z-20" : "hidden"} duration-75 ease-in-out absolute right-[-25px] `}
+                />
+              </div>
             </button>
             <Link to="works" offset={-80} smooth={true} duration={500}>
               <button className="font-bold inter hover:bg-gray-400 border-gray-100 duration-200 text-gray-700 cursor-pointer  flex items-center justify-between  rounded-sm bg-[#A5BBCB] px-2 py-1 text-xs md:text-[13px] ">

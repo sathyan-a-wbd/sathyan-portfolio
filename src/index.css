@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   background-color: #211f20;
+  /* background: radial-gradient(circle at 50% 50%, #211f2085, #211f20b8); */
 }
-*{
+* {
   font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -136,7 +137,7 @@ textarea:focus {
 
 .poppins-regular-italic {
   font-family: "Poppins", sans-serif;
-  
+
   font-style: italic;
 }
 
@@ -144,10 +145,9 @@ textarea:focus {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: italic;
-  
 }
-.logo{
-  font-size:110px;
+.logo {
+  font-size: 110px;
 }
 .poppins-semibold-italic {
   font-family: "Poppins", sans-serif;
@@ -184,14 +184,44 @@ textarea:focus {
   height: 100%;
 }
 
-.slider{
-  display:flex;
-  overflow:scroll;
+.slider {
+  display: flex;
+  overflow: scroll;
 }
-.animate{
+.animate {
   animation: slide 2s linear infinite alternate;
 }
 @keyframes slide {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(200px); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+@keyframes fileDrop {
+  0% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  30% {
+    transform: translateY(-25px) rotate(-180deg);
+  }
+
+  60% {
+    opacity: 60%;
+    transform: translateY(0.5px) rotate(-190deg);
+  }
+  70% {
+    transform: translateY(0.5px) rotate(-195deg);
+    opacity: 1%;
+  }
+  100% {
+    transform: translateY(0) rotate(-195deg);
+    opacity: 0;
+  }
+}
+
+.animate-fileDrop {
+  animation: fileDrop 2s ease forwards;
 }
