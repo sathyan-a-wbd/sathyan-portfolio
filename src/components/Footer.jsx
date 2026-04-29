@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="flex justify-center items-center">
         <div className="flex-col flex md:flex-row w-[80%] gap-4 items-center justify-between text-gray-100 text-sm py-4">
           <div>
-            <p className="text-[15px] font-extrabold poppins-regular-italic tracking-wider text-gray-400">
+            <p className="text-[12px] sm:text-[15px] font-extrabold syne italic tracking-wider text-gray-400">
               "Building Learning Improving"
             </p>
           </div>

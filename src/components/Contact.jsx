@@ -6,6 +6,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import Headings from "./small_compo/Headings";
 function Contact({ contactFocus }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -71,9 +72,7 @@ function Contact({ contactFocus }) {
 
   return (
     <section className="w-full my-3 flex flex-col lg:flex-col md:flex-col sm:flex-col items-center justify-center">
-      <h1 className="text-center work-sans mb-8 text-[#A5BBCB] text-4xl font-bold inter">
-        Contact Me
-      </h1>
+      <Headings value={"04"} title={"Contact Me "} />
       <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[90%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
         <div className="w-full flex flex-col gap-8">
           <form

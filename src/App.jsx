@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import { Element } from "react-scroll";
 import Works from "./components/Works";
 import Footer from "./components/Footer";
+import SkillCard from "./components/SkillCard";
 
 function App() {
   const [downloadMsg, setDownloadMsg] = useState(false);
@@ -34,9 +35,9 @@ function App() {
   transition-all duration-800
   flex flex-col gap-4
   ${
-    downloadMsg
-      ? "opacity-100 scale-100 visible"
-      : "opacity-0 scale-95 invisible pointer-events-none"
+    downloadMsg ?
+      "opacity-100 scale-100 visible"
+    : "opacity-0 scale-95 invisible pointer-events-none"
   }
 `}
         >
@@ -57,6 +58,7 @@ function App() {
       <Element name="about">
         <About />
       </Element>
+
       <Element name="skills">
         <Skills />
       </Element>

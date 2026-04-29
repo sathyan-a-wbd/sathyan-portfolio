@@ -21,7 +21,7 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
     setTimeout(() => {
       const link = document.createElement("a");
       link.href = "/Sathyan.pdf";
-      link.download = "Sathyan-Frontend-Developer.pdf";
+      link.download = "Sathyan-Developer.pdf";
       link.click();
       setIsAnimate(false);
     }, 2000);
@@ -30,27 +30,27 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="bg-[#211F20] shadow-md fixed top-0 left-0 w-full z-50">
+    <nav className="bg-[#010310] shadow-lg border-1 border-b-white/20  fixed top-0 left-0 w-full z-50">
       <div className="max-w7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-1 justify-between w-38 cursor-pointer">
-            <img
+            {/* <img
               width="50"
               height="50"
               src="https://img.icons8.com/clouds/100/under-computer.png"
               alt="under-computer"
-            />
-            <h3 className="text-xl work-sans tracking-wider font-bold text-gray-200 md:text-2xl">
-              Sathyan.dev
+            /> */}
+            <h3 className="text-[1.2rem] syne tracking-wider font-extrabold text-gray-200 md:text-[1.2rem] ">
+              SA
             </h3>
           </div>
-          <ul className="hidden justify-between items-center w-100 text-gray-100 md:flex">
+          <ul className="hidden text-[0.79rem] dm-mono uppercase text-sm tracking-widest justify-between items-center w-100 text-gray-100 md:flex">
             <Link
               to="hero"
               smooth={true}
               duration={500}
               offset={-80}
-              className=" font-bold cursor-pointer hover:text-[#cde4f5] relative inline-block after:w-full after:block after:rounded-xl after:h-[3px] after:bg-[#A5BBCB] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center "
+              className=" font-light cursor-pointer hover:text-[#23A9BD] transition-all duration-300 relative inline-block  "
             >
               Home
             </Link>
@@ -59,7 +59,7 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
               smooth={true}
               duration={500}
               offset={-80}
-              className=" font-bold cursor-pointer hover:text-[#cde4f5] relative inline-block after:w-full after:block after:rounded-xl after:h-[3px] after:bg-[#A5BBCB] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center "
+              className=" font-light cursor-pointer hover:text-[#23A9BD] transition-all duration-300 relative inline-block  "
             >
               About
             </Link>
@@ -68,7 +68,7 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
               smooth={true}
               duration={500}
               offset={-80}
-              className=" font-bold cursor-pointer hover:text-[#cde4f5] relative inline-block after:w-full after:block after:rounded-xl after:h-[3px] after:bg-[#A5BBCB] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center "
+              className=" font-light cursor-pointer hover:text-[#23A9BD] transition-all duration-300 relative inline-block  "
             >
               Skills
             </Link>
@@ -77,7 +77,7 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
               smooth={true}
               duration={500}
               offset={-80}
-              className=" font-bold cursor-pointer hover:text-[#cde4f5] relative inline-block after:w-full after:block after:rounded-xl after:h-[3px] after:bg-[#A5BBCB] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center "
+              className=" font-light cursor-pointer hover:text-[#23A9BD] transition-all duration-300 relative inline-block  "
             >
               Works
             </Link>
@@ -86,14 +86,14 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
               smooth={true}
               duration={500}
               onClick={() => setContactFocus((prev) => !prev)}
-              className=" font-bold cursor-pointer hover:text-[#cde4f5] relative inline-block after:w-full after:block after:rounded-xl after:h-[3px] after:bg-[#A5BBCB] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center "
+              className=" font-light cursor-pointer hover:text-[#23A9BD] transition-all duration-300 relative inline-block  "
             >
               Contact
             </Link>
           </ul>
           <div className="flex items-center gap-3">
             <button
-              className="font-bold duration-200 relative cursor-pointer text-gray-100 flex items-center justify-between  rounded-sm bg-[#A5BBCB] pl-3 pr-8 py-1 text-sm md:text-md gap-2"
+              className="font-medium  relative cursor-pointer text-white flex items-center justify-between ring-white/20 rounded-sm ring-1 dm-mono uppercase hover:ring-[#23A9BD] hover:text-[#23A9BD] transition-all duration-300 pl-6 pr-10 py-2  text-sm md:text-md gap-2"
               onClick={handleDownload}
             >
               <div className="relative w-12 h-6 flex items-center justify-center">
@@ -107,84 +107,97 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
               </div>
             </button>
             <button
-              className="md:hidden focus:outline-none cursor-pointer text-[#A5BBCB] hover:text-white"
+              className="md:hidden focus:outline-none cursor-pointer text-[#A5BBCB] hover:text-white transition-all duration-300"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {/* Hamburger Icon */}
-              <svg
-                xmlns="https://www.w3.org/2000/svg"
-                className="h-6 w-6 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
+              <div className="relative w-6 h-6 mr-2">
+                <span
+                  className={`absolute h-[1.5px] w-5 bg-current rounded transition-all duration-300 ${
+                    isOpen ? "rotate-45 top-3" : "top-1"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute h-[1.5px] w-5 bg-current rounded transition-all duration-300 ${
+                    isOpen ? "opacity-0" : "top-3"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute h-[1.5px] w-5 bg-current rounded transition-all duration-300 ${
+                    isOpen ? "-rotate-45 top-3" : "top-5"
+                  }`}
+                ></span>
+              </div>
             </button>
           </div>
         </div>
       </div>
-      {isOpen && (
-        <ul className="md:hidden font-roboto-tail mt-4 space-y-2 flex flex-col items-center gap-5 my-4">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ?
+            "max-h-96 opacity-100 translate-y-0 border-t border-white/10"
+          : "max-h-0 opacity-0 -translate-y-5"
+        }`}
+      >
+        <ul className="backdrop-blur-xl bg-white/5 lora uppercase text-sm tracking-widest flex flex-col items-center gap-2 py-6">
           <Link
             to="hero"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleRemove}
-            className=" font-bold cursor-pointer hover:text-[#A5BBCB] text-gray-100"
+            className="w-[85%] text-center py-3 rounded-md text-gray-100 hover:bg-white/10 hover:text-[#23A9BD] transition-all duration-300 cursor-pointer"
           >
             Home
           </Link>
+
           <Link
             to="about"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleRemove}
-            className=" font-bold cursor-pointer hover:text-[#A5BBCB] text-gray-100"
+            className="w-[85%] text-center py-3 rounded-md text-gray-100 hover:bg-white/10 hover:text-[#23A9BD] transition-all duration-300 cursor-pointer"
           >
             About
           </Link>
+
           <Link
             to="skills"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleRemove}
-            className=" font-bold cursor-pointer hover:text-[#A5BBCB] text-gray-100"
+            className="w-[85%] text-center py-3 rounded-md text-gray-100 hover:bg-white/10 hover:text-[#23A9BD] transition-all duration-300 cursor-pointer"
           >
             Skills
           </Link>
+
           <Link
             to="works"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleRemove}
-            className=" font-bold cursor-pointer hover:text-[#A5BBCB] text-gray-100"
+            className="w-[85%] text-center py-3 rounded-md text-gray-100 hover:bg-white/10 hover:text-[#23A9BD] transition-all duration-300 cursor-pointer"
           >
             Works
           </Link>
+
           <Link
             to="contact"
             smooth={true}
             duration={500}
             offset={-70}
-            onClick={handleRemove}
-            className=" font-bold cursor-pointer hover:text-[#A5BBCB] text-gray-100"
+            onClick={() => {
+              handleRemove();
+              setContactFocus((prev) => !prev);
+            }}
+            className="w-[85%] text-center py-3 rounded-md text-gray-100 hover:bg-white/10 hover:text-[#23A9BD] transition-all duration-300 cursor-pointer"
           >
             Contact
           </Link>
         </ul>
-      )}
+      </div>
     </nav>
   );
 }

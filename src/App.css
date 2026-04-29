@@ -13,3 +13,21 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+.syne {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+}
+.lora-italic {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+}
+.dm-mono {
+  font-family: "DM Mono", monospace;
+}

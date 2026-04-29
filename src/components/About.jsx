@@ -1,25 +1,26 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaCalendar } from "react-icons/fa";
 
+import { FiCalendar } from "react-icons/fi";
+import Sno from "./small_compo/Sno";
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
 function About() {
   const education = [
     {
-      hold: "BCA",
+      hold: "Bachelor of Computer Applications",
       university: "TMG College of Arts and Science - University of Madras",
-      date: "June 2022 - June 2025",
+      date: "2022 - 2025",
     },
     {
-      hold: "HSC | 67.1",
+      hold: "Higher Secondary Education (HSC)",
       university: "GHSS-Pazhampettai",
-      date: "June 2020 - June 2022",
+      date: "2020 - 2022",
     },
     {
-      hold: "SSLC | 73.2",
+      hold: "Secondary School Leaving Certificate",
       university: "GHSS-Pazhampettai",
-      date: "June 2019 - June 2020",
+      date: "2019 - 2020",
     },
   ];
   const boxRef = useRef(null);
@@ -41,19 +42,20 @@ function About() {
     };
   }, []);
   return (
-    <div className="flex  flex-col w-full items-center justify-center overflow-hidden ">
+    <div className="flex  flex-col w-full my-5 items-center justify-center overflow-hidden ">
       <div className="w-[90%] md:w-[80%]">
         <div
           ref={boxRef}
-          className="flex inter items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold"
+          className="flex syne items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold"
         >
-          about
+          <Sno value={"01"} />
+          About
           <div
             className="mt-3"
-            style={{ width: "90%", height: "2px", backgroundColor: "#A5BBCB" }}
+            style={{ width: "90%", height: "1px", backgroundColor: "#A5BBCB" }}
           ></div>{" "}
         </div>
-        <p className=" work-sans text-justify indent-[3rem] mt-3 font-medium tracking-wide text-gray-400">
+        <p className=" lora text-justify indent-[3rem] mt-3 font-medium tracking-wide text-gray-400">
           Hi, I’m Sathyan, a passionate Front-End Developer with a knack for
           crafting clean, responsive, and user-friendly web experiences. I
           specialize in React.js, and JavaScript, building applications that are
@@ -64,27 +66,30 @@ function About() {
           make it beautiful.
         </p>
       </div>
-      <section ref={boxRef} className="education w-[90%] md:w-[80%]">
-        <h2 className="text-2xl font-extrabold text-gray-400 mt-5 mb-5">
+      <section
+        ref={boxRef}
+        className="education rgba(223, 223, 223, 0.3) overflow-hidden shadow-lg p-5 rounded-xl ring-white/20 ring-1 md:ring-0 w-[90%] my-5 md:w-[80%]"
+      >
+        <h2 className="text-2xl font-bold syne text-gray-400 mt-5 mb-5">
           {" "}
           Education :
         </h2>
         <div
-          className={`flex flex-col gap-5 md:flex-row w-[100%] justify-between items-center transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
+          className={`grid grid-cols-1 gap-4 md:grid-cols-2 w-[100%] justify-between items-center transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
         >
           {education.map((stats, i) => (
             <div
               key={i}
-              className="bg-[rgba(255,255,255,.2)] flex flex-col
-         gap-1 w-full md:w-auto  work-sans rounded-md shadow-lg p-4  px-6 border border-[#fff]"
+              className="bg-[rgba(255,255,255,0.1)] flex flex-col
+         gap-1 w-full md:w-auto duration-300 transition-all hover:-translate-y-1 rounded-md shadow-[2px_0px_30px_3px_rgba(255,255,255,0.001)] p-4 ring-1 ring-white/20 hover:ring-[#23A9BD] px-6 mb-2"
             >
-              <h2 className="work-sans text-[20px] text-gray-300">
-                {stats.hold}
-              </h2>
-              <h4 className="text-gray-300 inter">{stats.university}</h4>
+              <h2 className="syne text-[20px] text-gray-300">{stats.hold}</h2>
+              <h4 className="text-[#7a8570] dm-mono text-sm">
+                {stats.university}
+              </h4>
               <span>{stats.clg || ""}</span>
-              <p className="flex gap-1 text-xs items-center text-gray-300">
-                <FaCalendar />
+              <p className="flex gap-1 dm-mono text-xs items-center text-[#23A9BD]">
+                <FiCalendar />
                 {stats.date}
               </p>
             </div>

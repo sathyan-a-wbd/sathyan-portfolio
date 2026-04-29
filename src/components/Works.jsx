@@ -28,6 +28,8 @@ import SeparateFood from "../assets/ProjectScrennshots/Separate.JPG";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Sno from "./small_compo/Sno";
+import Headings from "./small_compo/Headings";
 
 function Works() {
   const projects = [
@@ -115,9 +117,7 @@ function Works() {
       ref={boxRef}
       className="flex my-15 overflow-hidden flex-col w-full items-center justify-center"
     >
-      <h2 className="text-center mb-5 text-[#A5BBCB] text-4xl font-extrabold inter">
-        My Works
-      </h2>
+      <Headings value={"03"} title={"My Works"} />
       <div
         className={`max-w-7xl md:max-w-5xl rounded-xl  mt-3  w-[90%] md:w-[70%] mx-auto space-y-6 transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
       >
@@ -147,15 +147,15 @@ function Works() {
 
             {/* Project Details */}
             <div className="card-body p-3 flex flex-col gap-2">
-              <h5 className="card-title inter text-gray-400 font-bold">
+              <h5 className="card-title syne text-gray-400 font-bold">
                 {" "}
                 {project.title}
               </h5>
-              <p className="card-text text-gray-300 work-sans text-justify indent-[10px] text-sm md:text-md">
+              <p className="card-text text-gray-300 lora text-justify indent-[10px] text-sm md:text-md">
                 {project.description}
               </p>
               <p className="text-gray-300 work-sans text-sm md:text-md indent-[10px]">
-                <strong className="text-gray-300 work-sans text-sm md:text-md">
+                <strong className=" dm-mono text-[#23A9BD] text-sm md:text-md">
                   Tech:
                 </strong>{" "}
                 {project.tech + ""}
@@ -185,17 +185,16 @@ function Works() {
           <div className="w-full mb-3 flex items-center justify-center">
             <button
               onClick={() => setShowall(!showall)}
-              className="flex gap-2 items-center outline:none border:none justify-center px-6 py-2 rounded-lg bg-indigo-500 text-white hover:bg-indigo-600 transition"
+              className="flex gap-2 items-center outline:none border:none justify-center px-6 py-2 rounded-lg ring-1 ring-white/20 hover:ring-[#23A9BD] text-white hover:text-[#23A9BD] dm-mono uppercase text-sm transition"
             >
-              {!showall ? (
+              {!showall ?
                 <>
                   Show More <FaAngleDoubleDown />
                 </>
-              ) : (
-                <>
+              : <>
                   Show Less <FaAngleDoubleDown className="rotate-180" />
                 </>
-              )}
+              }
             </button>
           </div>
         )}

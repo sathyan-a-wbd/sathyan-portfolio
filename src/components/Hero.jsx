@@ -10,10 +10,6 @@ import { FaFolderOpen } from "react-icons/fa";
 import { FaFilePdf, FaRegFilePdf, FaRegFolderOpen } from "react-icons/fa6";
 import { AiFillFolderAdd } from "react-icons/ai";
 
-// #211F20
-//text //#A5BBCB
-//#9CAFBF
-
 function Hero({ setDownloadMsg }) {
   const sectionRef = useRef(null);
   const [animate, setAnimate] = useState(false);
@@ -24,7 +20,7 @@ function Hero({ setDownloadMsg }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setAnimate(true);
-          observer.disconnect(); // Trigger only once
+          observer.disconnect();
         }
       },
       { threshold: 0.2 },
@@ -39,7 +35,7 @@ function Hero({ setDownloadMsg }) {
     setTimeout(() => {
       const link = document.createElement("a");
       link.href = "/Sathyan.pdf";
-      link.download = "Sathyan-Frontend-Developer.pdf";
+      link.download = "Sathyan-Developer.pdf";
       link.click();
       setIsAnimate(false);
     }, 2000);
@@ -48,29 +44,39 @@ function Hero({ setDownloadMsg }) {
   return (
     <section
       ref={sectionRef}
-      className="max-w-10xl my-18 mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:items-start gap-6"
+      className="max-w-10xl my-10 md:my-18 mx-auto px-8 py-8 md:py-12 flex flex-col md:flex-row items-center md:items-start gap-8"
     >
       {/* left */}
-      <div className="flex-1 py-24 flex items-center  justify-center text-center md:text-left">
+      <div className="flex-1 order-2 md:order-1 py-6 md:py-24 flex items-center justify-center text-center md:text-left">
         <div
-          className={`flex flex-col items-start transition-all duration-1000 ease-out transform ${
+          className={`flex flex-col items-center  md:items-start transition-all duration-1000 ease-out transform ${
             animate ? "opacity-100 translate-x-1" : "opacity-0 -translate-x-0"
           }`}
         >
-          <p className="p-2 tracking-wider roboto text-left text-gray-300  font-bold">
-            I'm Sathyan
+          <p className="text-4xl sm:text-5xl font-extrabold tracking-wide text-left text-gray-300 syne">
+            Sathyan A
           </p>
-          <h1 className=" poppins-extrabold text-[#A5BBCB] text-6xl md:text-6xl text-left font-extrabold">
-            Front-End <br />
-            Developer
+          <h1 className=" my-[1rem] text-[#7a8570] text-[1.2rem] lora-italic tracking-wider text-left font-medium">
+            Fullstack Developer - MERN
           </h1>
-          <div className="flex items-center gap-2 mt-3">
+          <p className="  text-white text-justify text-[1.1rem] md:w-[70%] w-full lora my-[1rem]">
+            BCA Graduate (2025) specializing in JavaScript, React, and the MERN
+            stack. I build responsive, well-structured web applications from
+            frontend to backend.
+          </p>{" "}
+          <div className="flex items-center gap-4 mt-3"></div>
+          <div className="flex w-full gap-4 flex-col md:flex-row items-center justify-center">
+            <Link to="works" offset={-80} smooth={true} duration={500}>
+              <button className="font-medium dm-mono uppercase relative duration-200  cursor-pointer flex items-center justify-center text-lg md:text-sm rounded-sm ring-1 ring-white/20 bg-[#23A9BD] text=black hover:shadow-[3px_7px_20px_1px_#23A9BD] hover:-translate-y-2 hover:ring-[#23A9BD] w-50 py-4">
+                My works
+              </button>
+            </Link>
             <button
-              className={`${isAnimate ? "shadow-[0_0_20px_20px_amber-100]" : ""} font-bold inter hover:bg-gray-400 relative duration-200  cursor-pointer text-gray-700 flex items-center justify-between text-xs md:text-[13px] rounded-sm bg-[#A5BBCB] pl-3 pr-8 py-1`}
+              className={`${isAnimate ? "shadow-[0_0_20px_20px_amber-100]" : ""} font-medium dm-mono uppercase relative duration-200  cursor-pointer text-white flex items-center justify-center text-lg md:text-sm rounded-sm ring-1 ring-white/20 hover:text-[#23A9BD] hover:-translate-y-2 hover:ring-[#23A9BD] w-50 py-4`}
               onClick={handleDownload}
             >
               <div className="relative flex items-center justify-center">
-                Resume
+                <p className="mr-3">Resume</p>
                 <FaFilePdf
                   className={` ${isAnimate ? "animate-fileDrop z-1 text-white" : ""}  absolute right-[-25px] `}
                 />
@@ -79,23 +85,30 @@ function Hero({ setDownloadMsg }) {
                 />
               </div>
             </button>
-            <Link to="works" offset={-80} smooth={true} duration={500}>
-              <button className="font-bold inter hover:bg-gray-400 border-gray-100 duration-200 text-gray-700 cursor-pointer  flex items-center justify-between  rounded-sm bg-[#A5BBCB] px-2 py-1 text-xs md:text-[13px] ">
-                My works
+            <Link to="contact" offset={-80} smooth={true} duration={500}>
+              <button className="font-medium dm-mono uppercase relative duration-200  cursor-pointer text-white flex items-center justify-center text-lg md:text-sm rounded-sm ring-1 ring-white/20 hover:text-[#23A9BD] hover:-translate-y-2 hover:ring-[#23A9BD]  w-50  py-4">
+                Get In touch
               </button>
             </Link>
           </div>
         </div>
       </div>
       {/* Right */}
-      <div className="flex-1  flex items-center md:justify-center">
-        <img
-          src={profile}
-          alt="sathyan.png"
-          className={`bg-[#9CAFBF] w-[300px] md:w-[350px] p-0 rounded-2xl transition-all transition-transform duration-300 hover:scale-105 duration-1000 ease-out transform ${
-            animate ? "opacity-100 translate-y-2" : "opacity-0 -translate-y-0"
+      <div className="flex-1 order-1 md:order-2 flex items-center md:justify-center">
+        <div
+          className={`p-3 relative ring-1 ring-white/20 rounded-2xl transition-all  duration-300 hover:scale-102  ease-out transform ${animate ? "opacity-100 " : "opacity-0 -translate-y-0"} `}
+        >
+          <div className="rounded-sm text-xs absolute shadow-sm -bottom-1 -right-2 bg-[#23A9BD] text-white px-4 py-2">
+            {" "}
+            Open to Work{" "}
+          </div>
+          <img
+            src={profile}
+            alt="sathyan.png"
+            className={`bg-[#9CAFBF] w-[250px] ring-2 ring-[#23A9BD] md:w-[350px] p-0 rounded-2xl 
           }`}
-        />
+          />
+        </div>
       </div>
       <hr />
     </section>
