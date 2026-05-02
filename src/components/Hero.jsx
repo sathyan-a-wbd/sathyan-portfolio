@@ -9,8 +9,9 @@ import { FaFileDownload } from "react-icons/fa";
 import { FaFolderOpen } from "react-icons/fa";
 import { FaFilePdf, FaRegFilePdf, FaRegFolderOpen } from "react-icons/fa6";
 import { AiFillFolderAdd } from "react-icons/ai";
+import toast from "react-hot-toast";
 
-function Hero({ setDownloadMsg }) {
+function Hero() {
   const sectionRef = useRef(null);
   const [animate, setAnimate] = useState(false);
   const [isAnimate, setIsAnimate] = useState(false);
@@ -30,13 +31,14 @@ function Hero({ setDownloadMsg }) {
     return () => observer.disconnect();
   }, []);
   const handleDownload = () => {
-    setDownloadMsg(true);
+    toast.loading("Preparing your download...");
     setIsAnimate(true);
     setTimeout(() => {
       const link = document.createElement("a");
       link.href = "/Sathyan.pdf";
       link.download = "Sathyan-Developer.pdf";
       link.click();
+      toast.success("Resume downloaded successfully!");
       setIsAnimate(false);
     }, 2000);
   };
@@ -44,16 +46,16 @@ function Hero({ setDownloadMsg }) {
   return (
     <section
       ref={sectionRef}
-      className="max-w-10xl my-10 md:my-18 mx-auto px-8 py-8 md:py-12 flex flex-col md:flex-row items-center md:items-start gap-8"
+      className="max-w-10xl my-10 md:my-18 mx-auto px-8 py-8 md:py-12 flex flex-col lg:flex-row items-center lg:items-start gap-8"
     >
       {/* left */}
-      <div className="flex-1 order-2 md:order-1 py-6 md:py-24 flex items-center justify-center text-center md:text-left">
+      <div className="md:w-1/2 w-full order-2 lg:order-1 py-6 md:py-24 flex items-center justify-center text-center md:text-left">
         <div
           className={`flex flex-col items-center  md:items-start transition-all duration-1000 ease-out transform ${
             animate ? "opacity-100 translate-x-1" : "opacity-0 -translate-x-0"
           }`}
         >
-          <p className="text-4xl sm:text-5xl font-extrabold tracking-wide text-left text-gray-300 syne">
+          <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic font-extrabold tracking-wide text-left text-gray-300 syne leading-tight">
             Sathyan A
           </p>
           <h1 className=" my-[1rem] text-[#7a8570] text-[1.2rem] lora-italic tracking-wider text-left font-medium">
@@ -94,7 +96,7 @@ function Hero({ setDownloadMsg }) {
         </div>
       </div>
       {/* Right */}
-      <div className="flex-1 order-1 md:order-2 flex items-center md:justify-center">
+      <div className="order-1 lg:order-2 flex items-center md:justify-center">
         <div
           className={`p-3 relative ring-1 ring-white/20 rounded-2xl transition-all  duration-300 hover:scale-102  ease-out transform ${animate ? "opacity-100 " : "opacity-0 -translate-y-0"} `}
         >

@@ -1,15 +1,35 @@
 import React from "react";
 import Sno from "./Sno";
 
-const Headings = ({ value, title }) => {
+const Headings = ({ value, title, cSize }) => {
   return (
-    <>
-      <div className="flex syne items-center gap-3 text-[#A5BBCB] w-[90%] md:w-[80%] text-4xl sm:text-5xl my-15 font-bold">
+    <div
+      style={{ fontSize: cSize || "" }}
+      className={`
+        flex items-center gap-3 
+        text-[#A5BBCB] italic 
+        w-[90%] md:w-[80%] 
+        my-15 font-extrabold syne
+        flex-nowrap whitespace-nowrap
+        text-xl sm:text-4xl md:text-5xl
+      `}
+    >
+      <div className="flex-shrink-0">
         <Sno value={value} />
-        {title}
-        <div className="mt-3 flex-1 h-[1.3px] opacity-40 bg-[#A5BBCB]"></div>{" "}
       </div>
-    </>
+
+      <span
+        style={{
+          fontSize: cSize || "clamp(1.25rem, 5vw, 3rem)",
+          whiteSpace: "nowrap",
+        }}
+        className="flex-shrink-0 tracking-tight syne font-extrabold"
+      >
+        {title}
+      </span>
+
+      <div className="h-[1.2px] flex-1 opacity-30 bg-[#A5BBCB] min-w-[20px]"></div>
+    </div>
   );
 };
 

@@ -8,15 +8,16 @@ import { FaFileDownload } from "react-icons/fa";
 import { FaFolderOpen } from "react-icons/fa";
 import { FaFilePdf, FaRegFilePdf, FaRegFolderOpen } from "react-icons/fa6";
 import { AiFillFolderAdd } from "react-icons/ai";
+import toast from "react-hot-toast";
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
-function NavBar({ setDownloadMsg, setContactFocus }) {
+function NavBar({ setContactFocus }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimate, setIsAnimate] = useState(false);
 
   const handleDownload = () => {
-    setDownloadMsg(true);
+    toast.success("Downloading Resume...");
     setIsAnimate(true);
     setTimeout(() => {
       const link = document.createElement("a");
@@ -24,6 +25,7 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
       link.download = "Sathyan-Developer.pdf";
       link.click();
       setIsAnimate(false);
+      toast.success("Resume downloaded successfully!");
     }, 2000);
   };
   const handleRemove = () => {
@@ -34,12 +36,6 @@ function NavBar({ setDownloadMsg, setContactFocus }) {
       <div className="max-w7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-1 justify-between w-38 cursor-pointer">
-            {/* <img
-              width="50"
-              height="50"
-              src="https://img.icons8.com/clouds/100/under-computer.png"
-              alt="under-computer"
-            /> */}
             <h3 className="text-[1.2rem] syne tracking-wider font-extrabold text-gray-200 md:text-[1.2rem] ">
               SA
             </h3>

@@ -11,12 +11,12 @@ const Footer = () => {
       <div className="flex justify-center items-center">
         <div className="flex-col flex md:flex-row w-[80%] gap-4 items-center justify-between text-gray-100 text-sm py-4">
           <div>
-            <p className="text-[12px] sm:text-[15px] font-extrabold syne italic tracking-wider text-gray-400">
+            <p className="text-xs italic sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl not-open:font-extrabold tracking-wide text-left text-gray-300 syne leading-tight">
               "Building Learning Improving"
             </p>
           </div>
           <div>
-            <ul className="flex items-center gap-3 inter">
+            <ul className="flex  items-center gap-3 inter">
               <Link
                 to="hero"
                 smooth={true}
@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <h2 className="text-gray-100 text-center text-xs font-bold tracking-wider poppins-regular">
+      <h2 className="text-gray-100 text-center text-xs font-bold lora text-[10px] tracking-wider ">
         © {currentYear} Sathyan.dev All Rights Reserved
       </h2>
     </section>

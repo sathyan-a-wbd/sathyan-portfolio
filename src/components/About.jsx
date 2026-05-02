@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 import { FiCalendar } from "react-icons/fi";
-import Sno from "./small_compo/Sno";
+import Headings from "./small_compo/Headings";
 // #211F20
 //text //#A5BBCB
 //#9CAFBF
@@ -43,18 +43,8 @@ function About() {
   }, []);
   return (
     <div className="flex  flex-col w-full my-5 items-center justify-center overflow-hidden ">
-      <div className="w-[90%] md:w-[80%]">
-        <div
-          ref={boxRef}
-          className="flex syne items-center gap-3 text-[#A5BBCB] text-5xl font-extrabold"
-        >
-          <Sno value={"01"} />
-          About
-          <div
-            className="mt-3"
-            style={{ width: "90%", height: "1px", backgroundColor: "#A5BBCB" }}
-          ></div>{" "}
-        </div>
+      <div ref={boxRef} className="w-[90%] md:w-[80%]">
+        <Headings value={"01"} title={"About"} cSize={"40px"} />
         <p className=" lora text-justify indent-[3rem] mt-3 font-medium tracking-wide text-gray-400">
           Hi, I’m Sathyan, a passionate Front-End Developer with a knack for
           crafting clean, responsive, and user-friendly web experiences. I

@@ -7,18 +7,13 @@ import emailjs from "@emailjs/browser";
 import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import Headings from "./small_compo/Headings";
+import toast from "react-hot-toast";
 function Contact({ contactFocus }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
-  const inputRef = useRef(null);
 
-  if (contactFocus) {
-    inputRef.current.focus();
-  }
-
-  // ✅ Validation Schema
   const validate = () => {
     let newErrors = {};
 
@@ -40,10 +35,9 @@ function Contact({ contactFocus }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  // ✅ Handle Submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validate()) return; // stop if validation fails
+    if (!validate()) return;
 
     const serviceID = "service_yta4mga";
     const tempID = "template_9kc7ujg";
@@ -59,32 +53,35 @@ function Contact({ contactFocus }) {
     emailjs
       .send(serviceID, tempID, templateParams, publicKey)
       .then(() => {
-        alert("✅ Thank you! Your mail was sent successfully.");
+        toast.success("Thank you! Your mail was sent successfully.");
         setName("");
         setEmail("");
         setMessage("");
         setErrors({});
       })
       .catch((error) => {
-        console.error("Error sending email:", error);
+        console.log(error);
+        toast.error(error.text || "Failed to send message");
       });
   };
 
   return (
     <section className="w-full my-3 flex flex-col lg:flex-col md:flex-col sm:flex-col items-center justify-center">
       <Headings value={"04"} title={"Contact Me "} />
-      <div className=" bg-[url('./assets/Untitled.png')] bg-cover bg-center w-[90%] md:w-[70%] shadow-md rounded-lg flex flex-col md:flex-row relative ">
-        <div className="w-full flex flex-col gap-8">
+      <div className="  w-full lg:w-[70%] shadow-md rounded-lg flex flex-col lg:flex-row relative ">
+        <div className="w-full flex flex-col gap-8 justify-center">
           <form
             onSubmit={handleSubmit}
-            className="form flex flex-col gap-7 px-10"
+            className="form flex flex-col gap-7 px-5"
           >
-            <h2 className="text-gray-100 text-3xl md:text-5xl">
-              Get In Touch <br />
-              <span className="text-[18px] font-poppins">
-                Feel free to contact me!
-              </span>
+            {/* bg-[url('./assets/Untitled.png')] */}
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-poppins mb-3">
+              Get In<span className="text-[#00b7ff] ml-2">Touch</span>
             </h2>
+
+            <span className="text-[14px] text-[#7a8570] lora font-poppins">
+              Feel free to contact me!
+            </span>
 
             <div className="input-field flex flex-col gap-6">
               {/* Name */}
@@ -92,9 +89,8 @@ function Contact({ contactFocus }) {
                 placeholder="Enter Your Name"
                 type="text"
                 value={name}
-                ref={inputRef}
+                className="px-4 py-4 rounded-md bg-white/10 border-white/20 border outline-none focus:border-[#23A9BD] text-white/60"
                 onChange={(e) => setName(e.target.value)}
-                className={`p-2 rounded-md border ${errors.name ? "border-red-500" : "border-gray-400"}`}
               />
               {errors.name && (
                 <span className="text-red-500 text-sm">{errors.name}</span>
@@ -106,7 +102,7 @@ function Contact({ contactFocus }) {
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`p-2 rounded-md border ${errors.email ? "border-red-500" : "border-gray-400"}`}
+                className="px-4 py-4 rounded-md bg-white/10 border-white/20 border outline-none focus:border-[#23A9BD] text-white/60"
               />
               {errors.email && (
                 <span className="text-red-500 text-sm">{errors.email}</span>
@@ -115,7 +111,7 @@ function Contact({ contactFocus }) {
               {/* Message */}
               <textarea
                 placeholder="Enter your Message"
-                className={`p-2 rounded-md border bg-gray-500 ${errors.message ? "border-red-500" : "border-gray-400"}`}
+                className="px-4 py-4 rounded-md bg-white/10 border-white/20 border outline-none focus:border-[#23A9BD] text-white/60"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
@@ -126,63 +122,79 @@ function Contact({ contactFocus }) {
               {/* Submit */}
               <button
                 type="submit"
-                className="cursor-pointer bg-[#008cffff] text-white py-2 rounded-md hover:bg-[#006bbf]"
+                className="cursor-pointer py-4 bg-[#009cffff] uppercase dm-mono text-white  rounded-md hover:bg-[#008cffff]"
               >
-                Submit
+                Send Message
               </button>
             </div>
           </form>
         </div>
 
         {/* Right Side */}
-        <div className="w-full flex items-center flex-col h-full justify-between space-y-11">
-          <div>
-            <img
-              src={ContactImage}
-              alt="contact"
-              className="hidden lg:flex md:flex sm:flex"
-            />
-          </div>
-          <div className="grid gap-3">
+
+        <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-10 p-6 md:p-10">
+          {/* Contact Details Card */}
+          <div className="flex-1 w-full max-w-lg bg-[#08111f]/70 backdrop-blur-lg border border-[#1b2b45] rounded-3xl p-8 shadow-2xl">
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-poppins mb-3">
+              Let’s <span className="text-[#00b7ff]">Connect</span>
+            </h2>
+
+            <p className="text-gray-400 font-poppins text-sm md:text-base leading-relaxed mb-8">
+              I’m currently open to Frontend Developer, React Developer, and
+              Full Stack opportunities. Feel free to reach out for
+              collaborations, freelance work, or job discussions.
+            </p>
+
+            {/* Email */}
             <a
-              className="flex gap-3 font-semibold text-sm md:text-md text-[#008cffff] font-poppins items-center"
-              href="mailto:sathyana3011@gmail.com?subject=Job Application&body=Hello, I would like to apply for the job..."
+              href="mailto:sathyana3011@gmail.com?subject=Job Opportunity&body=Hello Sathyan,"
+              className="group flex items-center gap-4 mb-5"
             >
-              <div
-                className={`border-2 border-[#008cffff] rounded-full p-3 bg-[#008cffff] shadow-inner`}
-              >
-                <IoIosMail className="text-[20px] text-[#fff]" />
+              <div className="p-4 rounded-2xl bg-[#00b7ff]/10 border border-[#00b7ff]/30 group-hover:bg-[#00b7ff] transition duration-300">
+                <IoIosMail className="text-[#00b7ff] group-hover:text-white text-2xl" />
               </div>
-              sathyana3011@gmail.com
+              <div>
+                <h4 className="text-white font-semibold font-poppins">Email</h4>
+                <p className="text-gray-400 text-sm md:text-base">
+                  sathyana3011@gmail.com
+                </p>
+              </div>
             </a>
-            <div className="flex gap-3 font-semibold text-sm md:text-md  text-[#008cffff] font-poppins items-center">
-              <div
-                className={`border-2 border-[#008cffff] bg-[#008cffff] rounded-full p-3`}
-              >
-                <FaLocationDot className="text-[20px] text-[#fff]" />
+
+            {/* Location */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-4 rounded-2xl bg-[#00b7ff]/10 border border-[#00b7ff]/30">
+                <FaLocationDot className="text-[#00b7ff] text-2xl" />
               </div>
-              Chennai
+              <div>
+                <h4 className="text-white font-semibold font-poppins">
+                  Location
+                </h4>
+                <p className="text-gray-400 text-sm md:text-base">
+                  Chennai, India
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex-1 flex justify-end rounded-tl-lg rounded-br-lg w-full">
-            <div className="flex px-3 py-3 items-center gap-3 rounded-tl-3xl rounded-br-lg bg-[#008cffff] text-gray-100">
+
+            {/* Social Buttons */}
+            <div className="flex gap-5">
               <a
                 href="https://www.linkedin.com/in/sathyan-sathya3011"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff] transition duration-300"
               >
-                <FaLinkedinIn
-                  role="button"
-                  size={30}
-                  className="cursor-pointer"
-                />
+                <FaLinkedinIn size={24} className="text-white" />
               </a>
+
               <a
                 href="https://github.com/sathyan-a-wbd/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff] transition duration-300"
               >
-                <FaGithub role="button" size={30} className="cursor-pointer" />
+                <FaGithub size={24} className="text-white" />
               </a>
             </div>
           </div>

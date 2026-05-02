@@ -12,7 +12,7 @@ body {
 @theme {
   --font-roboto-tail: "Roboto", sans-serif;
 }
-.input-field input,
+/* .input-field input,
 textarea {
   padding: 10px;
   border-radius: 4px;
@@ -32,7 +32,7 @@ textarea:focus {
   padding: 10px;
   border-radius: 4px;
   color: white;
-}
+} */
 .form {
   padding: 30px;
 }

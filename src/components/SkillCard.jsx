@@ -9,10 +9,8 @@ const SkillCard = ({ heading, subheading, skills = [], isVisible, index }) => {
       style={{ transitionDelay: `${index * 200}ms` }}
     >
       <div className="group relative flex flex-col gap-5 overflow-hidden rounded-xl border border-white/10 bg-[#ffffff0a] p-6 transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl">
-        {/* Animated Accent Top Line */}
         <div className="absolute left-0 top-0 h-[2px] w-full origin-left scale-x-0 bg-blue-500 transition-transform duration-500 ease-out group-hover:scale-x-100" />
 
-        {/* Header */}
         <div className="space-y-1">
           <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-500">
             {heading}
@@ -20,7 +18,6 @@ const SkillCard = ({ heading, subheading, skills = [], isVisible, index }) => {
           <p className="text-[15px] font-medium text-white/80">{subheading}</p>
         </div>
 
-        {/* Dynamic Skill Badges */}
         <div className="flex flex-wrap gap-2 items-center">
           {skills.map((skill, idx) => (
             <div
