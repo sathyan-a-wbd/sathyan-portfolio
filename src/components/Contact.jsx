@@ -1,5 +1,5 @@
 import { Button, TextareaAutosize, TextField } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import ContactImage from "../assets/Contact.png";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { IoIosMail } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import Headings from "./small_compo/Headings";
 import toast from "react-hot-toast";
-function Contact({ contactFocus }) {
+function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -122,7 +122,7 @@ function Contact({ contactFocus }) {
               {/* Submit */}
               <button
                 type="submit"
-                className="cursor-pointer py-4 bg-[#009cffff] uppercase dm-mono text-white  rounded-md hover:bg-[#008cffff]"
+                className="cursor-pointer py-4 bg-[#009cffff] uppercase dm-mono text-white  rounded-md hover:bg-[#008cffff] hover:-translate-y-2  hover:scale-105 duration-200 transition-all"
               >
                 Send Message
               </button>
@@ -152,7 +152,7 @@ function Contact({ contactFocus }) {
               className="group flex items-center gap-4 mb-5"
             >
               <div className="p-4 rounded-2xl bg-[#00b7ff]/10 border border-[#00b7ff]/30 group-hover:bg-[#00b7ff] transition duration-300">
-                <IoIosMail className="text-[#00b7ff] group-hover:text-white text-2xl" />
+                <IoIosMail className="text-[#00b7ff] group-hover:text-white text-2xl hover:-translate-y-2  hover:scale-105 duration-200 transition-all" />
               </div>
               <div>
                 <h4 className="text-white font-semibold font-poppins">Email</h4>
@@ -163,9 +163,9 @@ function Contact({ contactFocus }) {
             </a>
 
             {/* Location */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-8 ">
               <div className="p-4 rounded-2xl bg-[#00b7ff]/10 border border-[#00b7ff]/30">
-                <FaLocationDot className="text-[#00b7ff] text-2xl" />
+                <FaLocationDot className="text-[#00b7ff] text-2xl hover:-translate-y-2  hover:scale-105 duration-200 transition-all" />
               </div>
               <div>
                 <h4 className="text-white font-semibold font-poppins">
@@ -183,7 +183,7 @@ function Contact({ contactFocus }) {
                 href="https://www.linkedin.com/in/sathyan-sathya3011"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff] transition duration-300"
+                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff]  duration-300 hover:-translate-y-2  hover:scale-105 transition-all"
               >
                 <FaLinkedinIn size={24} className="text-white" />
               </a>
@@ -192,7 +192,7 @@ function Contact({ contactFocus }) {
                 href="https://github.com/sathyan-a-wbd/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff] transition duration-300"
+                className="p-4 rounded-2xl bg-[#0e1a2d] border border-[#223552] hover:bg-[#00b7ff] hover:-translate-y-2  hover:scale-105 duration-200 transition-all"
               >
                 <FaGithub size={24} className="text-white" />
               </a>
