@@ -96,9 +96,9 @@ function Hero() {
         </div>
       </div>
       {/* Right */}
-      <div className="order-1 lg:order-2 flex items-center md:justify-center">
+      <div className="order-1 lg:order-2 w-full flex items-center justify-center">
         <div
-          className={`p-3 relative ring-1 ring-white/20 rounded-2xl transition-all  duration-300 hover:scale-102  ease-out transform ${animate ? "opacity-100 " : "opacity-0 -translate-y-0"} `}
+          className={`p-3 flex items-center justify-center  relative ring-1 ring-white/20 rounded-2xl transition-all  duration-300 hover:scale-102  ease-out transform ${animate ? "opacity-100 " : "opacity-0 -translate-y-0"} `}
         >
           <div className="rounded-sm text-xs absolute shadow-sm -bottom-1 -right-2 bg-[#23A9BD] text-white px-4 py-2">
             {" "}

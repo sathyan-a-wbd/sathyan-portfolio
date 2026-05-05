@@ -20,7 +20,7 @@ const Headings = ({ value, title, cSize }) => {
 
       <span
         style={{
-          fontSize: cSize || "clamp(1.25rem, 5vw, 3rem)",
+          fontSize: cSize || "clamp(1.25rem, 5vw, 2.5rem)",
           whiteSpace: "nowrap",
         }}
         className="flex-shrink-0 tracking-tight syne font-extrabold"
