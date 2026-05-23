@@ -301,9 +301,9 @@ function Skills() {
                 <div
                   key={index}
                   className={`flex flex-col sm:flex-row p-0 rounded-2xl gap-2 items-center transition-all duration-1000 ease-out transform ${
-                    toolAnimate ?
-                      "translate-x-0 opacity-100"
-                    : "translate-x-[-50%] opacity-0"
+                    toolAnimate
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-[-50%] opacity-0"
                   }`}
                 >
                   <img

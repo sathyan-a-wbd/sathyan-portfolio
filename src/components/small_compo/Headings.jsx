@@ -14,7 +14,7 @@ const Headings = ({ value, title, cSize }) => {
         text-xl sm:text-4xl md:text-5xl
       `}
     >
-      <div className="flex-shrink-0">
+      <div className="mb-4">
         <Sno value={value} />
       </div>
 

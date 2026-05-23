@@ -65,13 +65,13 @@ function About() {
           Education :
         </h2>
         <div
-          className={`grid grid-cols-1 gap-4 md:grid-cols-2 w-[100%] justify-between items-center transition-all duration-1000 ease-in-out ${inView ? "translate-x-0 opacity-100" : "translate-x-30 opacity-0"}`}
+          className={`grid grid-cols-1 gap-4 md:grid-cols-2 w-[100%] justify-between items-center "}`}
         >
           {education.map((stats, i) => (
             <div
               key={i}
-              className="bg-[rgba(255,255,255,0.1)] flex flex-col
-         gap-1 w-full md:w-auto duration-300 transition-all hover:-translate-y-1 rounded-md shadow-[2px_0px_30px_3px_rgba(255,255,255,0.001)] p-4 ring-1 ring-white/20 hover:ring-[#23A9BD] px-6 mb-2"
+              className={`bg-[rgba(255,255,255,0.1)] flex flex-col gap-1 w-full md:w-auto  hover:-translate-y-1 transition-all duration-800 ease-in-out ${inView ? "translate-y-0 opacity-100" : "translate-y-30 opacity-0"} rounded-md shadow-[2px_0px_30px_3px_rgba(255,255,255,0.001)] p-4 ring-1 ring-white/20 hover:ring-[#23A9BD] px-6 mb-2`}
+              style={{ transitionDelay: `${i * 200}ms` }}
             >
               <h2 className="syne text-[20px] text-gray-300">{stats.hold}</h2>
               <h4 className="text-[#7a8570] dm-mono text-sm">

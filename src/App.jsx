@@ -10,6 +10,7 @@ import Works from "./components/Works";
 import Footer from "./components/Footer";
 import SkillCard from "./components/SkillCard";
 import { Toaster } from "react-hot-toast";
+
 function App() {
   const [contactFocus, setContactFocus] = useState(false);
 
@@ -33,6 +34,7 @@ function App() {
       <Element name="contact">
         <Contact contactFocus={contactFocus} />
       </Element>
+
       <Footer />
     </>
   );
