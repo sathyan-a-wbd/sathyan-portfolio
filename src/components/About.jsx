@@ -1,92 +1,121 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import { FiCalendar } from "react-icons/fi";
 import Headings from "./small_compo/Headings";
-// #211F20
-//text //#A5BBCB
-//#9CAFBF
+import education from "../data/educations";
 function About() {
-  const education = [
-    {
-      hold: "Bachelor of Computer Applications",
-      university: "TMG College of Arts and Science - University of Madras",
-      date: "2022 - 2025",
-    },
-    {
-      hold: "Higher Secondary Education (HSC)",
-      university: "GHSS-Pazhampettai",
-      date: "2020 - 2022",
-    },
-    {
-      hold: "Secondary School Leaving Certificate",
-      university: "GHSS-Pazhampettai",
-      date: "2019 - 2020",
-    },
-  ];
-  const boxRef = useRef(null);
-  const [inView, setInView] = useState(false);
+  // About section animation
+  const aboutRef = useRef(null);
+  const [aboutInView, setAboutInView] = useState(false);
+
+  // Education cards animation
+  const educationRef = useRef(null);
+  const [educationInView, setEducationInView] = useState(false);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
+    const aboutObserver = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true);
-          observer.unobserve(entry.target);
+          setAboutInView(true);
+          aboutObserver.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    const educationObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setEducationInView(true);
+          educationObserver.unobserve(entry.target);
         }
       },
       { threshold: 0.2 },
     );
-    if (boxRef.current) observer.observe(boxRef.current);
+
+    if (aboutRef.current) aboutObserver.observe(aboutRef.current);
+
+    if (educationRef.current) educationObserver.observe(educationRef.current);
+
     return () => {
-      if (boxRef.current) observer.unobserve(boxRef.current);
+      if (aboutRef.current) aboutObserver.unobserve(aboutRef.current);
+
+      if (educationRef.current)
+        educationObserver.unobserve(educationRef.current);
     };
   }, []);
+
   return (
-    <div className="flex  flex-col w-full my-5 items-center justify-center overflow-hidden ">
-      <div ref={boxRef} className="w-[90%] md:w-[80%]">
+    <section className="w-full flex justify-center overflow-hidden py-16">
+      <div className="w-[90%] md:w-[85%] max-w-7xl">
+        {/* Heading */}
         <Headings value={"01"} title={"About"} cSize={"40px"} />
-        <p className=" lora text-justify indent-[3rem] mt-3 font-medium tracking-wide text-gray-400">
-          Hi, I’m Sathyan, a passionate Front-End Developer with a knack for
-          crafting clean, responsive, and user-friendly web experiences. I
-          specialize in React.js, and JavaScript, building applications that are
-          both visually appealing and highly functional.
-          <br /> <br />I love turning ideas into interactive digital products —
-          from brainstorming concepts to polishing the smallest UI details. My
-          development philosophy is simple: keep it fast, keep it simple, and
-          make it beautiful.
-        </p>
-      </div>
-      <section
-        ref={boxRef}
-        className="education rgba(223, 223, 223, 0.3) overflow-hidden shadow-lg p-5 rounded-xl ring-white/20 ring-1 md:ring-0 w-[90%] my-5 md:w-[80%]"
-      >
-        <h2 className="text-2xl font-bold syne text-gray-400 mt-5 mb-5">
-          {" "}
-          Education :
-        </h2>
+
+        {/* About Content */}
         <div
-          className={`grid grid-cols-1 gap-4 md:grid-cols-2 w-[100%] justify-between items-center "}`}
+          ref={aboutRef}
+          className={`mt-6 transition-all duration-1000 ease-out ${
+            aboutInView
+              ? "translate-y-0 opacity-100"
+              : "translate-y-10 opacity-0"
+          }`}
         >
-          {education.map((stats, i) => (
-            <div
-              key={i}
-              className={`bg-[rgba(255,255,255,0.1)] flex flex-col gap-1 w-full md:w-auto  hover:-translate-y-1 transition-all duration-800 ease-in-out ${inView ? "translate-y-0 opacity-100" : "translate-y-30 opacity-0"} rounded-md shadow-[2px_0px_30px_3px_rgba(255,255,255,0.001)] p-4 ring-1 ring-white/20 hover:ring-[#23A9BD] px-6 mb-2`}
-              style={{ transitionDelay: `${i * 200}ms` }}
-            >
-              <h2 className="syne text-[20px] text-gray-300">{stats.hold}</h2>
-              <h4 className="text-[#7a8570] dm-mono text-sm">
-                {stats.university}
-              </h4>
-              <span>{stats.clg || ""}</span>
-              <p className="flex gap-1 dm-mono text-xs items-center text-[#23A9BD]">
-                <FiCalendar />
-                {stats.date}
-              </p>
-            </div>
-          ))}
+          <p className="text-gray-400 text-justify leading-8 tracking-wide text-[15px] sm:text-base lora indent-8">
+            Hi, I’m <span className="text-white font-semibold">Sathyan</span>, a
+            passionate Front-End Developer focused on crafting clean,
+            responsive, and user-friendly web experiences.
+            <br />
+            <br />
+            I specialize in React.js and JavaScript, building applications that
+            are both visually appealing and highly functional. I enjoy turning
+            ideas into interactive digital products — from brainstorming
+            concepts to polishing the smallest UI details.
+            <br />
+            <br />
+            My development philosophy is simple:
+            <span className="text-[#A5BBCB] font-medium">
+              {" "}
+              keep it fast, keep it simple, and make it beautiful.
+            </span>
+          </p>
         </div>
-      </section>
-    </div>
+
+        {/* Education Section */}
+        <div ref={educationRef} className="mt-14">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-200 syne mb-8">
+            Education
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {education.map((item, i) => (
+              <div
+                key={i}
+                className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-[#23A9BD]/50 hover:-translate-y-1 transition-all duration-700 ${
+                  educationInView
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-14 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: `${i * 180}ms`,
+                }}
+              >
+                <h3 className="text-lg sm:text-xl text-white font-semibold syne leading-snug">
+                  {item.hold}
+                </h3>
+
+                <p className="text-sm text-gray-400 mt-2 leading-relaxed dm-mono">
+                  {item.university}
+                </p>
+
+                <div className="flex items-center gap-2 mt-4 text-sm text-[#23A9BD]">
+                  <FiCalendar size={16} />
+                  <span className="dm-mono">{item.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

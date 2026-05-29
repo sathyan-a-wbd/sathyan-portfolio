@@ -1,108 +1,93 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { MdCopyright } from "react-icons/md";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const navLinks = [
+    { name: "Home", to: "hero" },
+    { name: "About", to: "about" },
+    { name: "Skills", to: "skills" },
+    { name: "Works", to: "works" },
+    { name: "Contact", to: "contact" },
+  ];
+
   return (
-    <section className="w-full shadow-xl shadow-[#fff] mt-10">
-      <div className="flex justify-center items-center">
-        <div className="flex-col flex md:flex-row w-[80%] gap-4 items-center justify-between text-gray-100 text-sm py-4">
-          <div>
-            <p className="text-xs italic sm:text-xl  not-open:font-extrabold tracking-wide text-left text-gray-300 syne leading-tight">
-              "Building Learning Improving"
+    <footer className="w-full border-t border-white/10 bg-black/40 backdrop-blur-md mt-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          {/* Brand / Quote */}
+          <div className="text-center lg:text-left">
+            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-wide">
+              Sathyan.dev
+            </h2>
+
+            <p className="mt-2 text-sm sm:text-base text-gray-400 italic leading-relaxed max-w-md">
+              “Building, Learning, and Improving every day.”
             </p>
           </div>
-          <div>
-            <ul className="flex  items-center gap-3 inter">
-              <Link
-                to="hero"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className=" font-bold cursor-pointer hover:text-[#A5BBCB]"
-              >
-                Home
-              </Link>
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className=" font-bold cursor-pointer hover:text-[#A5BBCB]"
-              >
-                About
-              </Link>
-              <Link
-                to="skills"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className=" font-bold cursor-pointer hover:text-[#A5BBCB]"
-              >
-                Skills
-              </Link>
-              <Link
-                to="works"
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className=" font-bold cursor-pointer hover:text-[#A5BBCB]"
-              >
-                Works
-              </Link>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className=" font-bold cursor-pointer hover:text-[#A5BBCB]"
-              >
-                Contact
-              </Link>
-            </ul>
-          </div>
-          <div className="flex items-center gap-3">
+
+          {/* Navigation */}
+          <ul className="flex flex-wrap justify-center gap-5 sm:gap-7 text-sm sm:text-base">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  className="cursor-pointer text-gray-300 hover:text-[#00b7ff] hover:-translate-y-1 transition-colors duration-300 font-medium"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
             <a
-              className="flex gap-3 font-semibold text-md  font-poppins items-center"
-              href="mailto:sathyana3011@gmail.com?subject=Job Application&body=Hello, I would like to apply for the job..."
+              href="mailto:sathyana3011@gmail.com"
+              aria-label="Email"
+              className="w-11 h-11 hover:bg-[#00b7ff] rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <MdAlternateEmail
-                role="button"
-                size={30}
-                className="cursor-pointer hover:text-gray-400"
-              />
+              <MdAlternateEmail size={20} />
             </a>
+
             <a
               href="https://www.linkedin.com/in/sathyan-sathya3011"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-11 h-11 hover:bg-[#00b7ff] rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <FaLinkedinIn
-                role="button"
-                size={30}
-                className="cursor-pointer hover:text-gray-400"
-              />
+              <FaLinkedinIn size={18} />
             </a>
+
             <a
               href="https://github.com/sathyan-a-wbd/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-11 h-11 hover:bg-[#00b7ff] rounded-full border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/40 hover:-translate-y-1 transition-all duration-300"
             >
-              <FaGithub
-                role="button"
-                size={30}
-                className="cursor-pointer hover:text-gray-400"
-              />
+              <FaGithub size={18} />
             </a>
           </div>
         </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-white/10 mt-8 pt-6 text-center">
+          <p className="text-xs sm:text-sm text-gray-500 tracking-wide">
+            © {currentYear} Sathyan.dev — All Rights Reserved.
+          </p>
+        </div>
       </div>
-      <h2 className="text-gray-100 text-center text-xs font-bold lora text-[10px] tracking-wider ">
-        © {currentYear} Sathyan.dev All Rights Reserved
-      </h2>
-    </section>
+    </footer>
   );
 };
+
 export default Footer;
