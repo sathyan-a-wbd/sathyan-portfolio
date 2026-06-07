@@ -34,7 +34,7 @@ function NavBar({ setContactFocus }) {
       const link = document.createElement("a");
 
       link.href = "/Sathyan.pdf";
-      link.download = "Sathyan-Developer.pdf";
+      link.download = "resume-Sathyan.pdf";
 
       document.body.appendChild(link);
 
@@ -108,9 +108,9 @@ function NavBar({ setContactFocus }) {
                   className={`absolute text-[16px] transition-all duration-500
 
                   ${
-                    isAnimate
-                      ? "translate-y-2 opacity-0"
-                      : "translate-y-0 opacity-100"
+                    isAnimate ?
+                      "translate-y-2 opacity-0"
+                    : "translate-y-0 opacity-100"
                   }
                   `}
                 />
@@ -165,9 +165,9 @@ function NavBar({ setContactFocus }) {
         className={`overflow-hidden transition-all duration-500 ease-in-out md:hidden
 
         ${
-          isOpen
-            ? "max-h-[400px] border-t border-white/10 opacity-100"
-            : "max-h-0 opacity-0"
+          isOpen ?
+            "max-h-[400px] border-t border-white/10 opacity-100"
+          : "max-h-0 opacity-0"
         }
         `}
       >

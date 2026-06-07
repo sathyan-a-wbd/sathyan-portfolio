@@ -50,7 +50,7 @@ function Hero() {
       const link = document.createElement("a");
 
       link.href = "/Sathyan.pdf";
-      link.download = "Sathyan-Developer.pdf";
+      link.download = "resume-Sathyan.pdf";
 
       document.body.appendChild(link);
 
