@@ -29,7 +29,7 @@ const HeroImage = () => {
                 src={profile}
                 alt="Profile"
                 style={{ marginBottom: "-20px" }}
-                className=" w-[250px] sm:w-[300px] lg:w-[350px] h-auto"
+                className=" w-[200px] sm:w-[300px] lg:w-[350px] h-auto"
               />
               {tags.map((prop, i) => (
                 <Tags
