@@ -6,7 +6,7 @@ import tags from "../../data/tags";
 const HeroImage = () => {
   return (
     <>
-      <div className="lg:absolute relative w-full h-screen order-1 items-end  flex justify-center overflow-hidden ">
+      <div className="lg:absolute relative w-full h-auto sm:h-screen order-2 items-end  flex justify-center overflow-hidden ">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

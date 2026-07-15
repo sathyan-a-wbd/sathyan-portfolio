@@ -108,7 +108,7 @@ function HeroSection() {
     >
       {/* Left */}
       <div
-        className={`md:top-[30%] left-0 z-20 flex w-full h-screen items-center justify-center  py-4 text-left md:py-10 order-2 md:order-2 lg:justify-start lg:order-1 mx-10 `}
+        className={`md:top-[30%] mt-15 left-0 z-20 flex w-full h-auto items-center justify-center  py-4 text-left md:py-10 order-1 md:order-2 lg:justify-start lg:order-1 mx-10 `}
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -165,7 +165,7 @@ function HeroSection() {
             <Link to="works" offset={-80} smooth={true} duration={500}>
               <button
                 aria-label="View my projects"
-                className="dm-mono md:w-35 w-80 rounded-md border border-cyan-400 bg-[#23A9BD] px-4 py-4 text-sm font-medium uppercase text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(35,169,189,0.4)] focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                className="dm-mono md:w-35 w-70 rounded-md border border-cyan-400 bg-[#23A9BD] px-4 py-4 text-sm font-medium uppercase text-black transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(35,169,189,0.4)] focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
               >
                 My Works
               </button>
@@ -174,7 +174,7 @@ function HeroSection() {
             <button
               aria-label="Download resume"
               onClick={handleDownload}
-              className={`dm-mono flex w-80 md:w-35 items-center justify-center gap-3 rounded-md border border-white/15 px-4 py-4 text-sm font-medium uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40
+              className={`dm-mono flex w-70 md:w-35 items-center justify-center gap-3 rounded-md border border-white/15 px-4 py-4 text-sm font-medium uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40
       
                     ${isAnimate ? "shadow-[0_0_20px_rgba(255,255,255,0.15)]" : ""}
                     `}
@@ -205,7 +205,7 @@ function HeroSection() {
             <Link to="contact" offset={-80} smooth={true} duration={500}>
               <button
                 aria-label="Go to contact section"
-                className="dm-mono md:w-35 backdrop:blur-2xl w-80 rounded-md border border-white/15 px-4 py-4 text-sm font-medium uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                className="dm-mono md:w-35 backdrop:blur-2xl w-70 rounded-md border border-white/15 px-4 py-4 text-sm font-medium uppercase text-white transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
               >
                 Let's Talk
               </button>
