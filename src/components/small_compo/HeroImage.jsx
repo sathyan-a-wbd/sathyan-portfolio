@@ -12,7 +12,7 @@ const HeroImage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: "true", amount: 0.2 }}
-          className="flex flex-col items-center justify-center h-full w-full overflow-hidden"
+          className="flex flex-col md:mb-0 mb-4 items-center justify-center h-full w-full overflow-hidden"
         >
           <motion.div
             animate={{
@@ -40,8 +40,8 @@ const HeroImage = () => {
                 />
               ))}
             </div>
+            <div className=" w-[640px] h-[640px] md:w-[700px] md:h-[700px] rounded-full -bottom-140 absolute  bg-[#23A9BD] -z-10"></div>
           </motion.div>
-          <div className=" w-[640px] h-[640px] md:w-[700px] md:h-[700px] rounded-full -bottom-140 absolute  bg-[#23A9BD] -z-10"></div>
         </motion.div>
       </div>
     </>
