@@ -1,6 +1,6 @@
 import React, { useState, useCallback, memo } from "react";
 import { Link } from "react-scroll";
-
+import { motion } from "framer-motion";
 import { FaFilePdf, FaFolderOpen } from "react-icons/fa6";
 
 import toast from "react-hot-toast";
@@ -56,7 +56,11 @@ function NavBar({ setContactFocus }) {
   }, [closeMenu, setContactFocus]);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: "true", amount: 0.2 }}
       aria-label="Main navigation"
       className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#010310]/95 backdrop-blur-xl"
     >
@@ -190,7 +194,7 @@ function NavBar({ setContactFocus }) {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 

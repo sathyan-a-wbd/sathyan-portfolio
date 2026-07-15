@@ -7,7 +7,8 @@ import { FaFilePdf, FaFolderOpen } from "react-icons/fa6";
 
 import toast from "react-hot-toast";
 
-import profile from "../assets/ProjectScrennshots/sathyan.png";
+import profile from "../assets/sathyan.webp";
+// import profile from "../assets/sathyan-profie.png";
 
 function Hero() {
   const sectionRef = useRef(null);
@@ -156,9 +157,9 @@ function Hero() {
                   className={`absolute text-[17px] transition-all duration-500
 
                   ${
-                    isAnimate
-                      ? "translate-y-2 opacity-0"
-                      : "translate-y-0 opacity-100"
+                    isAnimate ?
+                      "translate-y-2 opacity-0"
+                    : "translate-y-0 opacity-100"
                   }
                   `}
                 />

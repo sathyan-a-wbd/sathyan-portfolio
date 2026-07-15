@@ -9,13 +9,16 @@ import Footer from "../components/Footer";
 import { Element } from "react-scroll";
 import { Toaster } from "react-hot-toast";
 import ScrollToTop from "../components/ui/ScrollToTop";
+import HeroSection from "../components/HeroSection";
+
 const Home = ({ setContactFocus, contactFocus }) => {
   return (
     <>
       <NavBar setContactFocus={setContactFocus} />
       <Toaster position="bottom-right" reverseOrder={false} />
       <Element name="hero">
-        <Hero />?
+        <HeroSection />
+        {/* <Hero /> //Old Hero Section */}
       </Element>
       <Element name="about">
         <About />
