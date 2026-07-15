@@ -29,7 +29,7 @@ const HeroImage = () => {
                 src={profile}
                 alt="Profile"
                 style={{ marginBottom: "-20px" }}
-                className=" w-[200px] sm:w-[300px] lg:w-[350px] h-auto"
+                className=" w-[200px] sm:w-[350px] md:w-[350px] lg:w-[350px] h-auto"
               />
               {tags.map((prop, i) => (
                 <Tags
@@ -41,7 +41,7 @@ const HeroImage = () => {
               ))}
             </div>
           </motion.div>
-          <div className="w-[700px] h-[700px] rounded-full absolute bottom-[-90%] md:bottom-[-50%] md:top-120 bg-[#23A9BD] -z-10"></div>
+          <div className=" w-[640px] h-[640px] md:w-[700px] md:h-[700px] rounded-full -bottom-140 absolute  bg-[#23A9BD] -z-10"></div>
         </motion.div>
       </div>
     </>
