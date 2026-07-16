@@ -6,13 +6,13 @@ import tags from "../../data/tags";
 const HeroImage = () => {
   return (
     <>
-      <div className="lg:absolute relative w-full h-auto sm:h-screen order-2 items-end  flex justify-center overflow-hidden ">
+      <div className="lg:absolute relative w-full h-screen sm:h-screen items-end flex justify-center overflow-hidden ">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: "true", amount: 0.2 }}
-          className="flex flex-col md:mb-0 mb-4 items-center justify-center h-full w-full overflow-hidden"
+          className="flex flex-col md:mb-0 mb-4 items-center sm:items-end justify-center h-full w-full overflow-hidden"
         >
           <motion.div
             animate={{
